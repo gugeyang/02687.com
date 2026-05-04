@@ -1,0 +1,96 @@
+################################# Slider #####################################
+slider:
+  enable : true
+  bg_image : "images/banner/banner-1.jpg"
+  slider_item:
+    - title : "Empowering Universities through Digital Innovation"
+      content : "Exploring next-generation EdTech, Learning Management Systems, Knowledge Graphs, and Smart Campus Infrastructure."
+      animation_in : "left"
+      animation_out : "right"
+      button:
+        enable : true
+        label : "Explore Dev Log"
+        link : "blog/"
+
+    - title : "Building the Future of Digital Pedagogy"
+      content : "Transforming traditional teaching methods with data-driven insights and AI-powered learning paths."
+      animation_in : "left"
+      animation_out : "right"
+      button:
+        enable : true
+        label : "Learn More"
+        link : "about/"
+
+############################### Banner feature ###############################
+banner_feature:
+  enable : true
+  image : "images/banner/banner-feature.png"
+  feature_item:
+    - name : "Smart Infrastructure"
+      icon : "ti-server"
+      content : "Self-hosted Docker and HomeLab setups for resilient campus deployments."
+
+    - name : "Knowledge Graphs"
+      icon : "ti-vector"
+      content : "Mapping student progress and connecting curriculum data seamlessly."
+
+    - name : "LMS Automation"
+      icon : "ti-settings"
+      content : "Advanced workflows and plugins for Moodle, Canvas, and custom platforms."
+
+    - name : "Developer Notes"
+      icon : "ti-receipt"
+      content : "Hands-on tutorials, Python scripts, and technical deep-dives."
+
+############################## about ##################################
+about:
+  enable : true
+  title : "About 02687.com"
+  image : "images/about/about-us.jpg"
+  content : "We are a collective of EdTech architects, developers, and educators focused on answering a critical question: How do we build the next-generation infrastructure for learning?\n\nOur mission is to empower universities, IT administrators, and independent developers to build smarter, more resilient, and more engaging digital campuses by sharing real-world architectures and open-source practices."
+  button:
+    enable : true
+    label : "Read More"
+    link : "about/"
+
+############################# Course ################################
+course:
+  enable : true
+  title : "Digital Pedagogy & Solutions"
+
+########################## Call to action ############################
+cta:
+  enable : true
+  subtitle : "Deploy your own EdTech stack"
+  title : "Learn about our Docker & HomeLab Architecture"
+  button:
+    enable : true
+    label : "View Dev Log"
+    link : "blog/"
+
+######################## Success story #############################
+success_story:
+  enable : false
+
+############################# event ################################
+event:
+  enable : false
+  title : "Upcoming Events"
+
+########################### funfacts ############################
+funfacts:
+  enable : true
+  funfact_item:
+    - name : "YEARS EXPERIENCE"
+      count : "10+"
+    - name : "DEPLOYMENTS"
+      count : "50+"
+    - name : "ARTICLES"
+      count : "20+"
+    - name : "OPEN SOURCE PROJECTS"
+      count : "5"
+
+############################# blog ################################
+blog:
+  enable : true
+  title : "Latest Dev Logs"

@@ -1,0 +1,9 @@
+[en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+
+[en.params]
+home = "Home"
+copyright = "Copyright &copy; 2026 02687.com. All Rights Reserved. Empowering Universities through Digital Innovation."

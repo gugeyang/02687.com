@@ -1,0 +1,35 @@
+[[main]]
+name = "Solutions & Pedagogy"
+url = "course/"
+weight = 1
+
+[[main]]
+name = "Dev Log"
+url = "blog/"
+weight = 2
+  
+[[main]]
+name = "About Us"
+url = "about/"
+weight = 3
+
+[[main]]
+name = "Contact"
+url = "contact/"
+weight = 4
+
+[[footer]]
+name = "Solutions"
+url = "course/"
+
+[[footer]]
+name = "Dev Log"
+url = "blog/"
+
+[[footer]]
+name = "About Us"
+url = "about/"
+
+[[footer]]
+name = "Privacy Policy"
+url = "privacy-policy/"

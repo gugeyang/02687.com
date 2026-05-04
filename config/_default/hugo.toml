@@ -1,0 +1,13 @@
+######################## default configuration ####################
+baseURL = "https://02687.com/"
+title = "02687.com | Future of Higher Education"
+theme = "educenter-hugo"
+timeZone = "Asia/Shanghai"
+pagination.pagerSize = 6
+summaryLength = 15
+googleAnalytics = ""
+disableLanguages = ["fr"]
+hasCJKLanguage = false
+
+[services.disqus]
+shortname = ''
