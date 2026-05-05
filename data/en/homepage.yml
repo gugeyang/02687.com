@@ -82,11 +82,11 @@ funfacts:
   enable : true
   funfact_item:
     - name : "YEARS EXPERIENCE"
-      count : "10+"
+      count : "10"
     - name : "DEPLOYMENTS"
-      count : "50+"
+      count : "50"
     - name : "ARTICLES"
-      count : "20+"
+      count : "20"
     - name : "OPEN SOURCE PROJECTS"
       count : "5"
 
