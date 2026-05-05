@@ -5,7 +5,7 @@ theme = "educenter-hugo"
 timeZone = "Asia/Shanghai"
 pagination.pagerSize = 6
 summaryLength = 15
-googleAnalytics = ""
+googleAnalytics = "G-TR54E8087D"
 disableLanguages = ["fr"]
 hasCJKLanguage = false
 
