@@ -3,8 +3,8 @@ slider:
   enable : true
   bg_image : "images/banner/banner-1.jpg"
   slider_item:
-    - title : "Empowering Universities through Digital Innovation"
-      content : "Exploring next-generation EdTech, Learning Management Systems, Knowledge Graphs, and Smart Campus Infrastructure."
+    - title : "02687.com — Open EdTech Infrastructure for Universities"
+      content : "The 02687 platform documents real-world deployments of Moodle, Docker, Knowledge Graphs, and serverless architectures for modern campus infrastructure."
       animation_in : "left"
       animation_out : "right"
       button:
@@ -12,8 +12,8 @@ slider:
         label : "Explore Dev Log"
         link : "blog/"
 
-    - title : "Building the Future of Digital Pedagogy"
-      content : "Transforming traditional teaching methods with data-driven insights and AI-powered learning paths."
+    - title : "Self-Host Your EdTech Stack — The 02687 Way"
+      content : "Practical guides for university IT teams: from Moodle Docker deployments to xAPI learning analytics and campus-wide SSO with Keycloak."
       animation_in : "left"
       animation_out : "right"
       button:
@@ -47,7 +47,7 @@ about:
   enable : true
   title : "About 02687.com"
   image : "images/about/about-us.jpg"
-  content : "We are a collective of EdTech architects, developers, and educators focused on answering a critical question: How do we build the next-generation infrastructure for learning?\n\nOur mission is to empower universities, IT administrators, and independent developers to build smarter, more resilient, and more engaging digital campuses by sharing real-world architectures and open-source practices."
+  content : "02687.com is an open EdTech infrastructure platform documenting real-world deployments of Moodle, Docker, Knowledge Graphs, and serverless architectures for universities worldwide.\n\nWe empower university IT administrators, EdTech developers, and independent educators to build smarter, more resilient digital campuses — without expensive SaaS lock-in."
   button:
     enable : true
     label : "Read More"

@@ -3,7 +3,7 @@
 [params]
 logo = "images/logo.png"
 # Meta data
-description = "Exploring next-generation EdTech, LMS, Knowledge Graphs, and Smart Campus Infrastructure."
+description = "02687.com is an open EdTech infrastructure platform documenting real-world deployments of Moodle, Docker, Knowledge Graphs, and serverless architectures for universities and independent educators."
 author = "02687.com Team"
 # contact info
 address = "Global EdTech Hub"

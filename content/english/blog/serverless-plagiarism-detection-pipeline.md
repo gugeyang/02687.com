@@ -121,3 +121,10 @@ However, there are architectural trade-offs:
 2. **Execution Time Limits**: AWS Lambda has a hard maximum execution time of 15 minutes. For massively complex NLP tasks on huge documents, we occasionally hit this limit. To mitigate this, we implemented chunking—breaking 100-page theses into 10-page chunks and running the analysis MapReduce style.
 
 Building your own plagiarism detection pipeline isn't trivial. It requires maintaining complex ingestion logic and tuning similarity algorithms to avoid false positives. However, the capability to analyze custom programmatic formats, maintain strict data privacy internally, and eliminate per-user vendor licensing has proven to be a massive operational win for our engineering team.
+
+## Integrating with Your LMS Submission Workflow
+
+This pipeline is deliberately LMS-agnostic at the ingestion layer. Whether you are running a self-hosted Moodle instance or Canvas LMS, the webhook contract is identical — a JSON payload with a `file_url`, `student_id`, and `assignment_id`. For instructions on how to configure Moodle webhooks and integrate external event-driven pipelines, refer to our foundational guide on [Self-Hosting Educational Tools with Docker and HomeLab](/blog/self-hosting-educational-tools-docker-homelab/).
+
+If your institution is also looking to capture *what* students learned (not just *whether* they submitted), consider pairing this pipeline with an xAPI event stream. Our article on [Moving from an LMS to a Learning Record Store (LRS) with xAPI](/blog/lms-to-lrs-with-xapi/) demonstrates how to route submission events alongside engagement signals into a unified data lake for longitudinal academic integrity analysis.
+
