@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="section-sm">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1 style="font-size: 6rem; font-weight: 800; color: #667eea; margin-bottom: 1rem;">404</h1>
+        <h2>Page Not Found</h2>
+        <p class="mt-3 mb-4" style="color: #666; font-size: 1.1rem;">
+          The page you are looking for doesn't exist or has been moved. This domain was previously used for a different website — if you arrived here from an old link, that content is no longer available.
+        </p>
+        <a href="/" class="btn btn-primary btn-lg mt-2">← Back to 02687.com Homepage</a>
+        <div class="mt-5">
+          <h4>You might be looking for:</h4>
+          <ul class="list-unstyled mt-3" style="line-height: 2.2;">
+            <li><a href="/blog/">📚 All Technical Articles</a></li>
+            <li><a href="/blog/self-hosting-educational-tools-docker-homelab/">🐳 Self-Hosting Moodle with Docker</a></li>
+            <li><a href="/blog/what-is-02687-edtech-platform/">🏠 What is 02687.com?</a></li>
+            <li><a href="/about/">ℹ️ About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tell search engines this page is gone (410 is stronger than 404) -->
+<meta name="robots" content="noindex, nofollow">
+{{ end }}

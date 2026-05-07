@@ -1,0 +1,17 @@
+# 02687.com robots.txt
+# Block crawling of legacy site paths (domain was previously a dating/social site)
+# These paths no longer exist and are wasting crawl budget
+
+User-agent: *
+
+# Block all legacy PHP paths from the previous site
+Disallow: /m/
+Disallow: /*.php
+Disallow: /*.php?*
+Disallow: /index
+
+# Allow everything else (our Hugo content)
+Allow: /
+
+# Sitemap location
+Sitemap: https://02687.com/sitemap.xml
