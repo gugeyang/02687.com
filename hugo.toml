@@ -12,7 +12,7 @@ email = "admin@02687.com"
 # contact form action
 contact_form_action = "#" # contact form works with https://formspree.io
 # Google Analytics
-  google_analytics_id = "G-MBS8YFS3BN" # your GA4 Measurement ID, e.g. G-XXXXXXXXXX
+  google_analytics_id = "" # your GA4 Measurement ID, e.g. G-XXXXXXXXXX
 # top header
 top_header = true
 
