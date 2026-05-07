@@ -1,8 +1,8 @@
----
+﻿---
 title: "Building a Campus-Wide Single Sign-On (SSO) with Keycloak"
 date: "2024-05-13T10:00:00+08:00"
 image: "images/blog/blog-post-4.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Security", "Infrastructure & Cloud"]
 tags: ["Keycloak", "SSO", "IAM", "Nginx", "Active Directory"]
@@ -11,9 +11,8 @@ description: "Step-by-step guide to deploying Keycloak as a campus-wide SSO prov
 
 Five years ago, a typical student at Global Tech University had to memorize separate passwords for the Learning Management System, the library portal, the email client, and the campus Wi-Fi. This fragmented identity landscape was a security nightmare. Students reused weak passwords, the helpdesk spent 40% of their time handling password reset tickets, and when a student graduated, offboarding their access across 15 disjointed systems took days.
 
-We needed a unified Identity and Access Management (IAM) solution. While commercial offerings are robust, their pricing models—often per-user—are ruinous for large educational institutions with hundreds of thousands of active and alumni accounts. We turned to Keycloak, an open-source IAM tool sponsored by Red Hat, to build our campus-wide Single Sign-On (SSO) infrastructure.
+We needed a unified Identity and Access Management (IAM) solution. While commercial offerings are robust, their pricing models鈥攐ften per-user鈥攁re ruinous for large educational institutions with hundreds of thousands of active and alumni accounts. We turned to Keycloak, an open-source IAM tool sponsored by Red Hat, to build our campus-wide Single Sign-On (SSO) infrastructure.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The Architectural Vision
 
@@ -87,3 +86,4 @@ We deployed Keycloak on a 3-node Kubernetes cluster. We had to carefully tune th
 Rolling out SSO isn't just an IT project; it's an organizational change management challenge. We couldn't flip a switch overnight. We spent a year running in a hybrid state, slowly migrating applications one by one, managing extensive communications, and training the helpdesk to handle MFA lockouts.
 
 However, the payoff is immense. Our security posture has drastically improved, onboarding new cloud services takes hours instead of weeks, and the student experience is finally cohesive. Open-source tools like Keycloak prove that you don't need a massive enterprise budget to build enterprise-grade identity infrastructure.
+

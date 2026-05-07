@@ -1,8 +1,8 @@
----
+﻿---
 title: "Using Prometheus and Grafana for LMS Performance Monitoring"
 date: "2024-05-11T10:00:00+08:00"
 image: "images/blog/blog-post-2.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure & Cloud"]
 tags: ["Prometheus", "Grafana", "LMS", "Monitoring", "PromQL"]
@@ -13,7 +13,6 @@ A Learning Management System (LMS) is the beating heart of modern university inf
 
 We didn't know the system was failing until the IT helpdesk phone lines melted down. We were flying blind. That incident triggered a massive overhaul of our observability stack. We moved away from scattered log files and black-box APM tools, embracing the open-source power of Prometheus and Grafana to build a proactive, high-resolution monitoring pipeline.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## Why Prometheus?
 
@@ -94,3 +93,4 @@ We had to brutally trim our rules. Now, we strictly adhere to symptom-based aler
 Implementing Prometheus and Grafana wasn't just a technical upgrade; it was a cultural shift for our IT department. We moved from "guessing" what was wrong to having empirical data to back up architectural decisions. When faculty complained that the system was slow, we could pull up the dashboard, pinpoint exactly which database query was causing the bottleneck, and roll out an index fix within hours.
 
 If you are running an LMS at scale without a time-series observability stack, you are effectively driving a race car blindfolded. The initial setup takes time, but the peace of mind during finals week is invaluable.
+

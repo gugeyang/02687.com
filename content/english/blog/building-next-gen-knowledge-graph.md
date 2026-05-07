@@ -1,19 +1,18 @@
----
+﻿---
 title: "Building the Next-Gen Knowledge Graph for Modern Universities"
 date: 2024-05-04T09:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Data & AI", "Dev Log"]
 tags: ["Knowledge Graph", "Neo4j", "Python", "Curriculum Mapping", "Graph Database"]
 description: "How to architect a Neo4j-based Knowledge Graph for higher education: defining concept nodes, REQUIRES/COVERS edges, and using graph traversal to generate personalized remedial learning paths."
 ---
 
-The concept of a "Knowledge Graph" isn't new. Google has been using it for over a decade to power search results. However, its application within Higher Education—specifically for curriculum mapping and personalized learning paths—is just starting to gain real traction.
+The concept of a "Knowledge Graph" isn't new. Google has been using it for over a decade to power search results. However, its application within Higher Education鈥攕pecifically for curriculum mapping and personalized learning paths鈥攊s just starting to gain real traction.
 
-For the longest time, universities have treated courses as isolated silos. A student takes Calculus 101, passes, and moves on to Physics. But the *concepts* within those courses—derivatives, limits, kinematics—are deeply interconnected. What if we could map these interdependencies computationally? 
+For the longest time, universities have treated courses as isolated silos. A student takes Calculus 101, passes, and moves on to Physics. But the *concepts* within those courses鈥攄erivatives, limits, kinematics鈥攁re deeply interconnected. What if we could map these interdependencies computationally? 
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ### The Problem with Flat Curriculum Data
 
@@ -71,7 +70,7 @@ Once this graph is populated, the real magic happens through graph traversal alg
 
 Let's say a student fails a midterm in "Data Structures". By querying the graph, the system can instantly look at the concepts covered in that specific exam, trace the `REQUIRES` edges backward, and identify the foundational prerequisite concepts the student likely missed in their freshman year. 
 
-Instead of just saying "Study harder for Data Structures," the LMS can dynamically suggest: *"It looks like you are struggling with 'Pointers'—a concept from CS-101. Review this specific video lecture before attempting the next assignment."*
+Instead of just saying "Study harder for Data Structures," the LMS can dynamically suggest: *"It looks like you are struggling with 'Pointers'鈥攁 concept from CS-101. Review this specific video lecture before attempting the next assignment."*
 
 ### Scaling the Architecture
 
@@ -79,4 +78,6 @@ Graph databases are notoriously memory-hungry. When you start tracking millions 
 
 **A quick tip from production:** Do not run your heavy analytical graph queries (like PageRank or community detection to find isolated curriculum islands) on your transactional database. Always set up a read-replica node specifically for analytics, keeping the primary node fast enough to serve real-time LMS queries.
 
-In the next entry, we’ll explore how to visualize this complex Neo4j data directly within a modern web frontend using libraries like D3.js or Cytoscape, giving educators a literal "map" of their curriculum.
+In the next entry, we鈥檒l explore how to visualize this complex Neo4j data directly within a modern web frontend using libraries like D3.js or Cytoscape, giving educators a literal "map" of their curriculum.
+
+

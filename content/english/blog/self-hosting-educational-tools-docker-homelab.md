@@ -1,8 +1,8 @@
----
+﻿---
 title: "Self-Hosting Educational Tools using Docker and HomeLab"
 date: 2024-05-03T10:00:00+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure & Cloud", "Dev Log"]
 tags: ["Docker", "HomeLab", "Self-Hosted LMS", "Moodle", "Nginx"]
@@ -11,9 +11,8 @@ description: "A practitioner's guide to self-hosting a full EdTech stack using D
 
 When designing IT infrastructure for higher education, the default choice for the past decade has been handing over data to massive SaaS providers. But as budget constraints tighten and data privacy concerns (GDPR, student data sovereignty) become critical, universities and independent educators are re-evaluating on-premise or privately hosted cloud solutions.
 
-I've spent years deploying massive infrastructure. Honestly, the barrier to entry for self-hosting has completely evaporated thanks to containerization. Today, I want to talk about leveraging a HomeLab environment—or a dedicated bare-metal server—to self-host an entire educational technology stack using Docker.
+I've spent years deploying massive infrastructure. Honestly, the barrier to entry for self-hosting has completely evaporated thanks to containerization. Today, I want to talk about leveraging a HomeLab environment鈥攐r a dedicated bare-metal server鈥攖o self-host an entire educational technology stack using Docker.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## Why Self-Host in EdTech?
 
@@ -128,7 +127,7 @@ server {
 }
 ```
 
-The `client_max_body_size 512M` line is a frequent source of confusion. Moodle's own PHP upload limit must match this value — set `upload_max_filesize` and `post_max_size` accordingly in `php.ini`, otherwise students uploading large video assignments will get cryptic 413 errors.
+The `client_max_body_size 512M` line is a frequent source of confusion. Moodle's own PHP upload limit must match this value 鈥?set `upload_max_filesize` and `post_max_size` accordingly in `php.ini`, otherwise students uploading large video assignments will get cryptic 413 errors.
 
 ## The "Gotchas" of Deployment
 
@@ -142,7 +141,7 @@ sudo chown -R 1001:1001 /path/to/your/docker/volumes
 
 **2. Handling Real-Time Traffic Spikes**
 
-During my first large-scale pilot test at a regional institution, the system crashed during a concurrent quiz submission. The bottleneck wasn't CPU — it was PHP-FPM workers getting exhausted waiting on database locks.
+During my first large-scale pilot test at a regional institution, the system crashed during a concurrent quiz submission. The bottleneck wasn't CPU 鈥?it was PHP-FPM workers getting exhausted waiting on database locks.
 
 The fix? Aggressive Redis caching. The `MOODLE_CACHE_DRIVER=redis` variable in the compose file above is not optional for production. It shifts session management and course structure caching directly into RAM. For a deep dive into sizing PHP-FPM worker pools correctly for your server's RAM, see our detailed guide on [Moodle Performance Tuning: PHP-FPM Workers, Redis Cache, and OPcache](/blog/moodle-performance-tuning-php-fpm-redis-opcache/).
 
@@ -165,3 +164,5 @@ For production deployments serving hundreds of concurrent users, add a monitorin
 The digital transformation of education isn't just about buying new software; it's about reclaiming the infrastructure. By standardizing on Docker, institutions can deploy complex, resilient environments in minutes rather than months.
 
 In the next post of this Dev Log, I'll walk through how we can write a custom Python script to automatically synchronize student rosters from a legacy SIS (Student Information System) directly into our new containerized LMS using its REST API. If you need a step-by-step installation walkthrough including SSL and database setup from scratch, our guide on [Installing Moodle on Ubuntu 22.04 with Docker Compose](/blog/installing-moodle-ubuntu-22-04-docker-compose/) picks up exactly where this post leaves off.
+
+

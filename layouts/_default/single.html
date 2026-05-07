@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<!-- blog details -->
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-2 order-lg-1">
+        <div class="row">
+          <div class="col-12 mb-4">
+            {{ partial "image.html" (dict "Src" .Params.image "Alt" "blog-thumb" "Class" "img-fluid w-100" ) }}
+          </div>
+          <div class="col-12">
+            <ul class="list-inline">
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">{{ i18n
+                  "posted_by" }}
+                  :</span><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author | title
+                  }}</a></li>
+
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">{{ i18n
+                  "date" }}
+                  :</span>{{ .PublishDate.Format "02 Jan, 2006" }}</li>
+
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">{{ i18n
+                  "category" }}
+                  :</span>{{ range $index, $elements:= .Params.Categories }}<a
+                  href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}"> {{ if ne $index 0 }}, {{ end }}
+                  {{ . | title }}</a> {{ end}}</li>
+
+            </ul>
+          </div>
+          <!-- border -->
+          <div class="col-12 my-4">
+            <div class="border-bottom"></div>
+          </div>
+          <!-- blog content -->
+          <div class="col-12 mb-5">
+            {{ .Content }}
+          </div>
+          <!-- Giscus Comments -->
+          <div class="col-12 mt-4 mb-5">
+            <div class="border-top pt-4">
+              <h4 class="mb-4">Comments</h4>
+              <script src="https://giscus.app/client.js" data-repo="gugeyang/02687.com" data-repo-id="R_kgDOSUDTAQ"
+                data-category="Announcements" data-category-id="DIC_kwDOSUDTAc4C8gcz" data-mapping="pathname"
+                data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top"
+                data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+                </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ partial "blog-sidebar.html" . }}
+    </div>
+  </div>
+</section>
+<!-- /blog details -->
+
+{{ end }}

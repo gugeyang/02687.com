@@ -1,8 +1,8 @@
----
+﻿---
 title: "Scaling BigBlueButton Video Conferencing for 10,000 Concurrent Students"
 date: "2024-05-06T10:00:00+08:00"
 image: "images/blog/blog-post-4.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure & Cloud"]
 tags: ["BigBlueButton", "WebRTC", "Scalelite", "Load Balancing", "UDP"]
@@ -13,7 +13,6 @@ When the shift to remote learning happened, Global Tech University was caught of
 
 The immediate reaction from management was to throw money at a commercial vendor. But as an engineering team, we looked at the data sovereignty requirements, the integration depth needed for our custom LMS, and the prohibitive per-user licensing costs, and decided to scale our self-hosted BBB infrastructure instead. This post details the architecture, the load balancing strategy, and the harsh lessons learned scaling open-source WebRTC infrastructure.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The Anatomy of a BigBlueButton Server
 
@@ -120,3 +119,5 @@ We utilized Prometheus and Grafana, hooking into the `bbb-exporter` module, to m
 **Pro-tip**: We modified the BBB HTML5 client configuration (`/etc/bigbluebutton/bbb-html5.yml`) to disable the default "join with microphone" prompt for classes over 50 users, defaulting them to "Listen Only". This massively reduced the immediate load on FreeSWITCH during class startup.
 
 Scaling WebRTC is hard. It forces you to understand networking at the packet level. But by utilizing Scalelite and rigorous automation, achieving a massive, self-hosted concurrent conferencing system is entirely feasible.
+
+

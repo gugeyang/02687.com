@@ -1,8 +1,8 @@
----
+﻿---
 title: "Migrating Legacy SIS Data to PostgreSQL using Python"
 date: "2024-05-12T10:00:00+08:00"
 image: "images/blog/blog-post-3.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Data & AI", "Dev Log"]
 tags: ["PostgreSQL", "Python", "ETL", "Legacy SIS", "Data Migration"]
@@ -13,7 +13,6 @@ If you work in higher education IT long enough, you eventually have to slay the 
 
 We made the strategic decision to migrate the core data warehouse to PostgreSQL. This wasn't just a database swap; it was an archaeological expedition. We discovered undocumented tables, bizarre encoding schemes, and business logic hardcoded into triggers written in the late 90s. This post outlines how we built a robust, repeatable ETL (Extract, Transform, Load) pipeline using Python to safely migrate millions of critical academic records.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The Data Extraction Challenge
 
@@ -106,10 +105,11 @@ Furthermore, during the initial historical load, we temporarily disabled indexes
 
 ## Idempotency and The UPSERT
 
-A migration script will inevitably fail midway through—a network blip, a corrupted disk, or an unhandled data edge case will crash the process. If your script isn't idempotent, you have to wipe the database and start over.
+A migration script will inevitably fail midway through鈥攁 network blip, a corrupted disk, or an unhandled data edge case will crash the process. If your script isn't idempotent, you have to wipe the database and start over.
 
 We heavily leveraged PostgreSQL's `ON CONFLICT DO UPDATE` clause (the "upsert"). This meant we could run the migration script repeatedly against the same data without fear of creating duplicate records or causing primary key violations. It gracefully updates existing records and inserts new ones.
 
 ## The Payoff
 
 Moving away from the legacy proprietary database was painful, but the resulting PostgreSQL data warehouse changed how our entire university operates. We finally had standard SQL access to our core data. Within a month, we had connected Metabase and Grafana directly to the new warehouse, providing administration with real-time analytics they previously waited weeks for. The Python ETL pipeline now runs nightly, ensuring the new cloud systems stay perfectly synchronized with the (stubbornly surviving) on-premise legacy apps.
+

@@ -1,8 +1,8 @@
----
+﻿---
 title: "Deploying Nextcloud as a Secure Alternative to Google Workspace for Education"
 date: "2024-05-14T10:00:00+08:00"
 image: "images/blog/blog-post-5.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure & Cloud"]
 tags: ["Nextcloud", "Ceph", "S3", "Kubernetes", "Data Sovereignty"]
@@ -13,7 +13,6 @@ For a decade, higher education enjoyed unlimited, free cloud storage from tech g
 
 At Global Tech University, we realized that relying entirely on third-party SaaS for our core institutional data was a strategic vulnerability. We needed a self-hosted, scalable, and secure file collaboration platform that kept our data on our own hardware, under our own jurisdiction. We chose Nextcloud. This post details our architectural approach to deploying Nextcloud for thousands of users, ensuring performance, data sovereignty, and compliance.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The Architecture of Sovereignty
 
@@ -104,3 +103,4 @@ spec:
 Moving away from Big Tech's ecosystem is politically and technically challenging. Users love the seamless collaborative editing of Google Docs. To match this, we deployed Collabora Online alongside Nextcloud, allowing multi-user, real-time editing of Office documents directly in the browser.
 
 Taking ownership of our data infrastructure required significant upfront engineering, but the long-term cost predictability and the absolute control over our digital sovereignty have proven to be the right strategic choice for our university.
+

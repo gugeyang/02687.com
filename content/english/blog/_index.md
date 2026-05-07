@@ -1,4 +1,4 @@
----
+﻿---
 title: "Dev Log & Technical Articles"
 draft: false
 # page title background image

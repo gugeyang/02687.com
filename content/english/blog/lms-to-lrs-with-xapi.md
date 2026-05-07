@@ -1,19 +1,18 @@
----
+﻿---
 title: "Moving from an LMS to a Learning Record Store (LRS) with xAPI"
 date: "2024-05-09T10:00:00+08:00"
 image: "images/blog/blog-post-7.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Data & AI"]
 tags: ["xAPI", "LRS", "Data Lake", "AWS Kinesis", "SCORM"]
 description: "Why xAPI and a Learning Record Store (LRS) outperform SCORM for modern education analytics. Includes an AWS Kinesis-based real-time ingestion pipeline and architecture trade-offs for institutional data teams."
 ---
 
-For decades, the Learning Management System (LMS) has been a monolithic black box. SCORM (Sharable Content Object Reference Model) allowed us to track basic metrics: did the student open the module, did they finish it, and what was their quiz score? But in modern education, learning happens everywhere—in interactive simulations, mobile apps, offline workshops, and VR environments. 
+For decades, the Learning Management System (LMS) has been a monolithic black box. SCORM (Sharable Content Object Reference Model) allowed us to track basic metrics: did the student open the module, did they finish it, and what was their quiz score? But in modern education, learning happens everywhere鈥攊n interactive simulations, mobile apps, offline workshops, and VR environments. 
 
 At Global Tech University, our data engineering team realized that treating the LMS as the sole source of truth for student engagement was severely limiting our analytics. We needed a decoupled architecture. We needed to transition to the Experience API (xAPI) and centralize our data in a Learning Record Store (LRS). This post explores the technical shift from SCORM to xAPI and how we architected our LRS ingestion layer.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The Limitations of SCORM and the LMS Silo
 
@@ -127,6 +126,8 @@ Once the data hits Elasticsearch, we use Kibana to build dashboards that overlay
 
 The primary challenge we faced was **data governance**. When you allow any application to generate custom JSON extensions, your taxonomy can quickly become a mess. If Team A uses `http://vocab.com/score` and Team B uses `http://vocab.com/final_grade`, aggregating that data later is a nightmare. 
 
-To solve this, we implemented a centralized "Vocabulary Registry"—a GitHub repository where all developers must submit a PR to define their verbs and extensions before they are allowed to push statements to the production LRS.
+To solve this, we implemented a centralized "Vocabulary Registry"鈥攁 GitHub repository where all developers must submit a PR to define their verbs and extensions before they are allowed to push statements to the production LRS.
 
 Transitioning to xAPI isn't just a technical upgrade; it is a paradigm shift. It forces an institution to recognize that learning is decentralized, and your architecture must reflect that reality.
+
+

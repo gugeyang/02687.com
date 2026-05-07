@@ -1,8 +1,8 @@
----
+﻿---
 title: "Automating Canvas LMS Enrollments Using Python and REST APIs"
 date: "2024-05-05T10:00:00+08:00"
 image: "images/blog/blog-post-3.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Dev Log", "Infrastructure & Cloud"]
 tags: ["Canvas LMS", "Python", "REST API", "Automation", "tenacity"]
@@ -13,13 +13,12 @@ I remember the start of a fall semester about five years ago. We had just migrat
 
 Manual CSV uploads via the Canvas UI simply weren't going to cut it. We needed an automated, resilient, and scriptable way to bridge the gap. That day, I abandoned the GUI and turned to the Canvas REST APIs. This post breaks down how we built a robust enrollment automation script using Python, complete with retry logic, error handling, and parallel processing. 
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The Problem with CSVs and Manual Sync
 
 Canvas offers SIS Import functionality, which is decent for bulk operations. However, it relies on CSV files formatted precisely to their specifications. When you're pulling data from a convoluted SQL database where student records might have multiple edge cases (e.g., dual-enrolled students, audited courses, or missing email domains), generating that perfect CSV becomes a fragile process. A single malformed line can crash an entire batch.
 
-Furthermore, CSV imports are asynchronous and somewhat opaque. You upload a file, wait, and then parse a report to find out what went wrong. For real-time or near-real-time updates—like when a student adds a class and expects to see it in their LMS ten minutes later—you need the REST API.
+Furthermore, CSV imports are asynchronous and somewhat opaque. You upload a file, wait, and then parse a report to find out what went wrong. For real-time or near-real-time updates鈥攍ike when a student adds a class and expects to see it in their LMS ten minutes later鈥攜ou need the REST API.
 
 ## Designing the API Integration
 
@@ -147,8 +146,10 @@ By leveraging the `response.links` dictionary provided by the `requests` library
 Building a direct API integration isn't without its downsides. 
 
 1. **Maintainability**: You now own this code. If Canvas changes an endpoint (rare, but it happens with beta features), your script breaks.
-2. **State Management**: The API is stateless. If your script dies on record 5,000 out of 10,000, you need logic to know where to resume. This is why making the `enroll_user` function idempotent is crucial—we can safely re-run the entire batch, and Canvas will simply return the existing enrollment object for the first 5,000 without throwing a duplicate error.
+2. **State Management**: The API is stateless. If your script dies on record 5,000 out of 10,000, you need logic to know where to resume. This is why making the `enroll_user` function idempotent is crucial鈥攚e can safely re-run the entire batch, and Canvas will simply return the existing enrollment object for the first 5,000 without throwing a duplicate error.
 
 Despite these trade-offs, the control you gain is immense. We eventually wrapped this Python script in a Docker container, deployed it as a CronJob on our Kubernetes cluster, and integrated it directly with our Kafka event stream from the SIS. Now, when a student registers for a class, they appear in Canvas within seconds, not hours.
 
 Stop wrestling with CSVs. The APIs are there for a reason. Use them.
+
+

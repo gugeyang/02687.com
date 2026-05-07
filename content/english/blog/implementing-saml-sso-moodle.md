@@ -1,8 +1,8 @@
----
+﻿---
 title: "Implementing SAML/SSO Authentication in Moodle"
 date: "2024-05-07T10:00:00+08:00"
 image: "images/blog/blog-post-5.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Security", "Infrastructure & Cloud"]
 tags: ["SAML 2.0", "Moodle", "SSO", "Azure AD", "auth_saml2"]
@@ -13,7 +13,6 @@ Password fatigue in higher education is a massive security liability. When Globa
 
 While Moodle has built-in LDAP and OAuth2 plugins, configuring it to act as a strict SAML Service Provider (SP) against a modern Identity Provider (IdP) like Azure AD or Okta requires navigating the notoriously complex `auth_saml2` plugin. This post details our architectural approach, the critical configuration pitfalls, and how to debug SAML assertions when things inevitably go wrong.
 
-<!-- ADSENSE_INSERT_HERE -->
 
 ## The SAML 2.0 Flow Explained
 
@@ -106,3 +105,5 @@ If Moodle fails to log the user in, use SAML Tracer to capture this XML. Verify 
 3. The `Attribute Name` exactly matches the mappings in your Moodle configuration.
 
 Implementing SAML correctly is a tedious exercise in XML namespace alignment. But once it is working, the reduction in support tickets and the increase in security posture make it one of the highest ROI infrastructure upgrades an educational institution can perform.
+
+
