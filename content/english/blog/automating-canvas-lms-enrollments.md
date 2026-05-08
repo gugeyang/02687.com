@@ -4,7 +4,7 @@ date: "2024-05-05T10:00:00+08:00"
 image: "images/blog/blog-post-3.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Dev Log", "Infrastructure & Cloud"]
+categories: ["Dev Log", "Infrastructure and Cloud"]
 tags: ["Canvas LMS", "Python", "REST API", "Automation", "tenacity"]
 description: "Battle-tested Python script for automating Canvas LMS enrollments via REST API. Covers rate-limit handling with exponential backoff, RFC 5988 pagination traversal, and idempotent bulk sync strategies."
 ---

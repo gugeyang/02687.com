@@ -4,7 +4,7 @@ date: 2026-05-14T10:00:00+08:00
 image: "images/blog/blog-post-6.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Dev Log", "Infrastructure & Cloud"]
+categories: ["Dev Log", "Infrastructure and Cloud"]
 tags: ["Moodle", "Redis", "Post-Mortem", "Incident Report", "Session Management"]
 description: "A production post-mortem of a Moodle outage during final exams caused by a Redis memory eviction misconfiguration. Covers the failure timeline, the wrong diagnosis I chased first, and the exact fix that prevented a recurrence."
 ---

@@ -4,7 +4,7 @@ date: "2024-05-07T10:00:00+08:00"
 image: "images/blog/blog-post-5.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Security", "Infrastructure & Cloud"]
+categories: ["Security", "Infrastructure and Cloud"]
 tags: ["SAML 2.0", "Moodle", "SSO", "Azure AD", "auth_saml2"]
 description: "Technical walkthrough of integrating SAML 2.0 SSO into Moodle using the auth_saml2 plugin. Covers certificate management, IdP metadata XML debugging, and Azure AD attribute mapping for production deployments."
 ---

@@ -4,7 +4,7 @@ date: "2024-05-08T10:00:00+08:00"
 image: "images/blog/blog-post-6.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Dev Log", "Data & AI"]
+categories: ["Dev Log", "Data and AI"]
 tags: ["Serverless", "AWS Lambda", "Python", "Plagiarism Detection", "MOSS"]
 description: "Build a cost-effective, serverless plagiarism detection system using AWS Lambda, S3, and the MOSS engine. Designed to handle peak-semester submission bursts without dedicated server infrastructure, with Lambda cold-start mitigation strategies."
 ---

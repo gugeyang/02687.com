@@ -4,7 +4,7 @@ date: "2024-05-09T10:00:00+08:00"
 image: "images/blog/blog-post-7.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Data & AI"]
+categories: ["Data and AI"]
 tags: ["xAPI", "LRS", "Data Lake", "AWS Kinesis", "SCORM"]
 description: "Why xAPI and a Learning Record Store (LRS) outperform SCORM for modern education analytics. Includes an AWS Kinesis-based real-time ingestion pipeline and architecture trade-offs for institutional data teams."
 ---

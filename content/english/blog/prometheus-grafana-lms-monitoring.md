@@ -4,7 +4,7 @@ date: "2024-05-11T10:00:00+08:00"
 image: "images/blog/blog-post-2.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud"]
+categories: ["Infrastructure and Cloud"]
 tags: ["Prometheus", "Grafana", "LMS", "Monitoring", "PromQL"]
 description: "Build a production-grade LMS observability stack with Prometheus and Grafana. Includes real PromQL alerting rules for connection pool exhaustion, a PostgreSQL exporter config, and a semester-start capacity planning runbook."
 ---

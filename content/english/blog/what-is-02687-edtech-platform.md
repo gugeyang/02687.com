@@ -4,7 +4,7 @@ date: 2026-05-06T20:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud", "Dev Log"]
+categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["02687", "EdTech Platform", "Open Source LMS", "Moodle", "Self-Hosted"]
 description: "02687.com is an open EdTech infrastructure platform documenting real-world deployments of Moodle, Docker, Knowledge Graphs, and serverless architectures for universities and independent educators. Here is what we build and why."
 ---

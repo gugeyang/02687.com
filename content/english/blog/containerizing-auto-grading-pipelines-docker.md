@@ -4,7 +4,7 @@ date: "2024-05-10T10:00:00+08:00"
 image: "images/blog/blog-post-1.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Dev Log", "Infrastructure & Cloud"]
+categories: ["Dev Log", "Infrastructure and Cloud"]
 tags: ["Docker", "Auto-Grading", "Python", "Celery", "Kubernetes"]
 description: "How to containerize untrusted student code submissions for automated grading using Docker and Celery. Includes resource-limit configurations, seccomp profiles, and a Kubernetes CronJob deployment pattern."
 ---

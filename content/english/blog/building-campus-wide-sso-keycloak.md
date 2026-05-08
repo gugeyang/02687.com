@@ -4,7 +4,7 @@ date: "2024-05-13T10:00:00+08:00"
 image: "images/blog/blog-post-4.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Security", "Infrastructure & Cloud"]
+categories: ["Security", "Infrastructure and Cloud"]
 tags: ["Keycloak", "SSO", "IAM", "Nginx", "Active Directory"]
 description: "Step-by-step guide to deploying Keycloak as a campus-wide SSO provider. Covers Active Directory federation, Nginx reverse proxy configuration, and debugging SAML attribute mapping in production."
 ---

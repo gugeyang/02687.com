@@ -4,7 +4,7 @@ date: 2024-05-04T09:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Data & AI", "Dev Log"]
+categories: ["Data and AI", "Dev Log"]
 tags: ["Knowledge Graph", "Neo4j", "Python", "Curriculum Mapping", "Graph Database"]
 description: "How to architect a Neo4j-based Knowledge Graph for higher education: defining concept nodes, REQUIRES/COVERS edges, and using graph traversal to generate personalized remedial learning paths."
 ---

@@ -4,7 +4,7 @@ date: 2026-05-05T14:00:00+08:00
 image: "images/blog/blog-post-4.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud", "Dev Log"]
+categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "Docker Compose", "Ubuntu 22.04", "MariaDB", "Nginx"]
 description: "Complete step-by-step guide to deploying Moodle on Ubuntu 22.04 using Docker Compose with MariaDB, Redis, and Nginx reverse proxy. Includes SSL setup with Let's Encrypt and production-ready volume configuration."
 ---

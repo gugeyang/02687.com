@@ -4,7 +4,7 @@ date: 2026-05-05T10:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud", "Dev Log"]
+categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "PHP-FPM", "Redis", "OPcache", "Performance Tuning"]
 description: "Production-proven Moodle performance tuning guide covering PHP-FPM worker pool sizing, Redis session and MUC cache configuration, and OPcache settings. Includes real config snippets and benchmarks from a 2,000-student deployment."
 ---

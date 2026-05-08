@@ -4,7 +4,7 @@ date: "2024-05-14T10:00:00+08:00"
 image: "images/blog/blog-post-5.jpg"
 author: "EdTech Architect"
 type: "post"
-categories: ["Infrastructure & Cloud"]
+categories: ["Infrastructure and Cloud"]
 tags: ["Nextcloud", "Ceph", "S3", "Kubernetes", "Data Sovereignty", "Collabora Online"]
 description: "Production architecture for deploying self-hosted Nextcloud to replace Google Workspace in education. Covers S3-compatible Ceph storage backend, Collabora Online document editing, LDAP provisioning, Redis tuning, and the gotchas we hit migrating 3,000 faculty and staff off Google Drive."
 ---

@@ -4,7 +4,7 @@ date: "2024-05-06T10:00:00+08:00"
 image: "images/blog/blog-post-4.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud"]
+categories: ["Infrastructure and Cloud"]
 tags: ["BigBlueButton", "WebRTC", "Scalelite", "Load Balancing", "UDP"]
 description: "Architecture guide for horizontally scaling BigBlueButton to 10,000 concurrent students using Scalelite as a load balancer. Covers TURN server configuration, UDP port tuning, and network topology decisions that prevent WebRTC session drops."
 ---

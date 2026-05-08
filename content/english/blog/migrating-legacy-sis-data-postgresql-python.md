@@ -4,7 +4,7 @@ date: "2024-05-12T10:00:00+08:00"
 image: "images/blog/blog-post-3.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Data & AI", "Dev Log"]
+categories: ["Data and AI", "Dev Log"]
 tags: ["PostgreSQL", "Python", "ETL", "Legacy SIS", "Data Migration"]
 description: "Hard-won lessons from migrating a 25-year-old Student Information System to PostgreSQL using Python streaming ETL. Covers dirty data remediation, encoding normalization, and resumable batch processing for multi-million row datasets."
 ---

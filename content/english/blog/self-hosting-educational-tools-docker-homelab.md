@@ -4,7 +4,7 @@ date: 2024-05-03T10:00:00+08:00
 image: "images/blog/blog-post-1.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud", "Dev Log"]
+categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Docker", "HomeLab", "Self-Hosted LMS", "Moodle", "Nginx"]
 description: "A practitioner's guide to self-hosting a full EdTech stack using Docker Compose. Covers Moodle, Redis caching, and Nginx reverse proxy, with real-world Gotchas on volume permissions and PHP-FPM tuning."
 ---

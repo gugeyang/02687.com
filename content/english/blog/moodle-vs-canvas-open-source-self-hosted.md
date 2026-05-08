@@ -4,7 +4,7 @@ date: 2026-05-07T10:00:00+08:00
 image: "images/blog/blog-post-5.jpg"
 author: "Alex Chen"
 type: "post"
-categories: ["Infrastructure & Cloud", "Dev Log"]
+categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "Canvas LMS", "LMS Comparison", "Self-Hosting", "Open Source"]
 description: "A blunt comparison of Moodle and Canvas open-source for self-hosted deployments in 2025. Covers deployment complexity, maintenance burden, TCO, and which one actually makes sense to run on your own hardware."
 ---
