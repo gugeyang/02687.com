@@ -105,7 +105,7 @@ Furthermore, during the initial historical load, we temporarily disabled indexes
 
 ## Idempotency and The UPSERT
 
-A migration script will inevitably fail midway through鈥攁 network blip, a corrupted disk, or an unhandled data edge case will crash the process. If your script isn't idempotent, you have to wipe the database and start over.
+A migration script will inevitably fail midway through—a network blip, a corrupted disk, or an unhandled data edge case will crash the process. If your script isn't idempotent, you have to wipe the database and start over.
 
 We heavily leveraged PostgreSQL's `ON CONFLICT DO UPDATE` clause (the "upsert"). This meant we could run the migration script repeatedly against the same data without fear of creating duplicate records or causing primary key violations. It gracefully updates existing records and inserts new ones.
 

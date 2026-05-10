@@ -9,7 +9,7 @@ tags: ["02687", "EdTech Platform", "Open Source LMS", "Moodle", "Self-Hosted"]
 description: "02687.com is an open EdTech infrastructure platform documenting real-world deployments of Moodle, Docker, Knowledge Graphs, and serverless architectures for universities and independent educators. Here is what we build and why."
 ---
 
-If you landed here by searching for "02687," you have found the right place. **02687.com** is not a stock ticker, a product code, or a regulatory filing number. It is the home of an independent EdTech engineering platform 鈥?a practitioner-run knowledge base dedicated to building the next generation of open, self-hosted educational infrastructure.
+If you landed here by searching for "02687," you have found the right place. **02687.com** is not a stock ticker, a product code, or a regulatory filing number. It is the home of an independent EdTech engineering platform — a practitioner-run knowledge base dedicated to building the next generation of open, self-hosted educational infrastructure.
 
 This post explains what 02687.com is, what we cover, and why we chose to build this resource for university IT teams, independent educators, and developers navigating the complex landscape of modern learning technology.
 
@@ -18,7 +18,7 @@ This post explains what 02687.com is, what we cover, and why we chose to build t
 
 Higher education technology is dominated by two forces pulling in opposite directions. On one side, massive SaaS vendors (Instructure for Canvas, Anthology for Blackboard) charge per-seat licensing fees that scale brutally as enrollment grows. On the other side, open-source platforms like Moodle and Open edX offer genuine flexibility but carry a steep operational learning curve that most university IT departments struggle to climb alone.
 
-The result? Institutions either overpay for locked-in SaaS products, or they deploy open-source platforms poorly 鈥?misconfigured databases, no monitoring, single points of failure 鈥?and blame the software when performance collapses during final exam week.
+The result? Institutions either overpay for locked-in SaaS products, or they deploy open-source platforms poorly — misconfigured databases, no monitoring, single points of failure — and blame the software when performance collapses during final exam week.
 
 02687.com exists to close that gap. Every article published here documents a real architecture decision made in a real deployment scenario, with the actual configuration files, the actual failure modes we encountered, and the actual fixes that worked.
 
@@ -44,7 +44,7 @@ Related resources:
 
 ### 3. Learning Data, xAPI, and Analytics Infrastructure
 
-SCORM was the standard of 2005. In 2026, universities need granular, real-time learning event data 鈥?not aggregated quiz completion percentages. We document xAPI implementation patterns, Learning Record Store (LRS) architecture, Knowledge Graph construction with Neo4j for curriculum mapping, and ETL pipelines for migrating data out of legacy Student Information Systems.
+SCORM was the standard of 2005. In 2026, universities need granular, real-time learning event data — not aggregated quiz completion percentages. We document xAPI implementation patterns, Learning Record Store (LRS) architecture, Knowledge Graph construction with Neo4j for curriculum mapping, and ETL pipelines for migrating data out of legacy Student Information Systems.
 
 ### 4. Automation, Serverless, and Developer Tooling
 
@@ -62,7 +62,7 @@ Based on the technical depth of our content, the primary audience of the 02687.c
 
 ## The 02687 Technical Stack Philosophy
 
-We favor a set of recurring technical choices across all deployments documented on this platform. These are not dogma 鈥?they are positions formed by hands-on experience:
+We favor a set of recurring technical choices across all deployments documented on this platform. These are not dogma — they are positions formed by hands-on experience:
 
 - **Containers over bare-metal installs**: Docker isolates dependencies, makes rollbacks trivial, and enables reproducible deployments across development, staging, and production.
 - **Open source over SaaS where operational maturity permits**: Moodle over Canvas Cloud, Nextcloud over Google Workspace, Keycloak over Okta.
@@ -71,7 +71,7 @@ We favor a set of recurring technical choices across all deployments documented 
 
 ## Trade-offs We Acknowledge
 
-Self-hosting is not free. The cost savings on licensing fees are real, but they shift the cost to engineering time. A misconfigured Moodle instance is worse than a working SaaS alternative. This is precisely why 02687.com documents the failure modes alongside the success paths 鈥?understanding *why* a configuration decision matters is more durable knowledge than simply copying a config file.
+Self-hosting is not free. The cost savings on licensing fees are real, but they shift the cost to engineering time. A misconfigured Moodle instance is worse than a working SaaS alternative. This is precisely why 02687.com documents the failure modes alongside the success paths — understanding *why* a configuration decision matters is more durable knowledge than simply copying a config file.
 
 For institutions with fewer than 500 students and no dedicated IT staff, a managed Moodle hosting provider may genuinely be the right answer. We document that trade-off honestly.
 
@@ -79,11 +79,11 @@ For institutions with fewer than 500 students and no dedicated IT staff, a manag
 
 The best entry point into the 02687.com platform depends on where you are in your infrastructure journey:
 
-- **Starting from zero?** 鈫?[Self-Hosting Educational Tools with Docker and HomeLab](/blog/self-hosting-educational-tools-docker-homelab/)
-- **Running Moodle already, struggling with performance?** 鈫?[Moodle Performance Tuning](/blog/moodle-performance-tuning-php-fpm-redis-opcache/)
-- **Dealing with identity management?** 鈫?[Implementing SAML SSO in Moodle](/blog/implementing-saml-sso-moodle/)
-- **Building learning analytics infrastructure?** 鈫?[Moving from an LMS to an LRS with xAPI](/blog/lms-to-lrs-with-xapi/)
+- **Starting from zero?** → [Self-Hosting Educational Tools with Docker and HomeLab](/blog/self-hosting-educational-tools-docker-homelab/)
+- **Running Moodle already, struggling with performance?** → [Moodle Performance Tuning](/blog/moodle-performance-tuning-php-fpm-redis-opcache/)
+- **Dealing with identity management?** → [Implementing SAML SSO in Moodle](/blog/implementing-saml-sso-moodle/)
+- **Building learning analytics infrastructure?** → [Moving from an LMS to an LRS with xAPI](/blog/lms-to-lrs-with-xapi/)
 
-The 02687.com knowledge base grows with every deployment. If a specific EdTech infrastructure challenge is not yet documented here, it is likely in the pipeline. Our editorial backlog prioritizes topics by real-world deployment frequency 鈥?if you encounter a challenge not yet covered, the [contact page](/contact/) is the fastest path to getting it addressed.
+The 02687.com knowledge base grows with every deployment. If a specific EdTech infrastructure challenge is not yet documented here, it is likely in the pipeline. Our editorial backlog prioritizes topics by real-world deployment frequency — if you encounter a challenge not yet covered, the [contact page](/contact/) is the fastest path to getting it addressed.
 
 

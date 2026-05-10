@@ -16,7 +16,7 @@ The obvious solution was Docker. But integrating Docker into an automated gradin
 
 ## The Core Architectural Problem
 
-When a student submits code via our Learning Management System (LMS), we essentially receive an untrusted payload. Executing this payload directly on a server is a recipe for disaster. We've seen it all鈥攊nfinite loops that eat up CPU, fork bombs designed to crash the host, and subtle attempts to access the local file system.
+When a student submits code via our Learning Management System (LMS), we essentially receive an untrusted payload. Executing this payload directly on a server is a recipe for disaster. We've seen it all—infinite loops that eat up CPU, fork bombs designed to crash the host, and subtle attempts to access the local file system.
 
 The pipeline needed to accomplish three things:
 1. **Isolation**: Every submission must run in an airtight environment.
