@@ -1,6 +1,6 @@
 ---
 title: "Canvas LMS vs Moodle 2026: Technical Comparison for University IT Teams"
-date: 2026-05-11T10:00:00+08:00
+date: 2026-05-11T00:00:00+08:00
 image: "images/blog/blog-post-4.jpg"
 author: "EdTech Architect"
 type: "post"
