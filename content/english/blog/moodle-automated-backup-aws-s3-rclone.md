@@ -2,7 +2,7 @@
 title: "Automated Moodle Backup to AWS S3 with Rclone and Cron: A Production Guide"
 date: 2026-05-16T12:00:00+08:00
 image: "images/blog/blog-post-3.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "AWS S3", "Rclone", "Backup", "Disaster Recovery", "Cron"]
