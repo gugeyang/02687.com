@@ -13,8 +13,6 @@ Moodle's built-in backup tool creates per-course `.mbz` archives. It does not ba
 
 This guide covers what a real Moodle backup looks like: a scripted process that captures the MariaDB database dump, the `moodledata` file directory, and the `config.php`, compresses them, ships them to AWS S3 with rclone, and enforces a retention policy — all running unattended via cron.
 
-<!-- ADSENSE_INSERT_HERE -->
-
 ## What a Complete Moodle Backup Actually Includes
 
 Before writing any scripts, it's worth being explicit about what needs to be captured. I've seen institutions run database backups for years, then discover during a restore that the `moodledata` directory — which holds all uploaded files, submitted assignments, and course resources — was never included. The database tells Moodle that a file exists; the `moodledata` directory is where the file actually lives.

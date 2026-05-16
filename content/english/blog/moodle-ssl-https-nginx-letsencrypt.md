@@ -13,8 +13,6 @@ Running Moodle on plain HTTP in production is not just a security problem — it
 
 This guide documents the exact Nginx reverse proxy and Let's Encrypt configuration I use in production Docker deployments, including the two `config.php` settings that most tutorials omit and that cause 80% of post-SSL-migration issues.
 
-<!-- ADSENSE_INSERT_HERE -->
-
 ## Why Moodle Needs a Reverse Proxy for HTTPS (Not Just Certbot Standalone)
 
 Let's Encrypt can issue certificates directly against your web server, but for a containerized Moodle deployment, running Nginx as an SSL-terminating reverse proxy is the correct architecture. It gives you SSL termination, HTTP/2 support, security header injection, and large file upload handling — all in one layer that sits in front of the Moodle PHP container.

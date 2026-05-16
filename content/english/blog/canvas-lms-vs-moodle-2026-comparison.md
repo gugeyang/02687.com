@@ -2,7 +2,7 @@
 title: "Canvas LMS vs Moodle 2026: Technical Comparison for University IT Teams"
 date: 2026-05-11T00:00:00+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Canvas LMS", "Moodle", "LMS Comparison", "EdTech Infrastructure", "Self-Hosted"]
@@ -12,8 +12,6 @@ description: "An in-depth 2026 technical comparison of Canvas LMS vs Moodle for 
 When universities face an LMS migration, the conversation usually revolves around user interface, teacher adoption, and feature checklists. But for the systems engineering teams responsible for keeping the platform online during final exam week, the debate is entirely different. You are not choosing an interface; you are marrying a technology stack, a scaling paradigm, and a specific set of infrastructure failure modes.
 
 In this technical breakdown, we look past the marketing brochures to compare Canvas LMS vs Moodle from the perspective of the engineers deploying, maintaining, and extending them. We will evaluate their architectural footprints, the realities of self-hosting, and the developer experience of their APIs. 
-
-<!-- ADSENSE_INSERT_HERE -->
 
 ## Architecture and Tech Stack: The Foundation of Canvas vs Moodle
 

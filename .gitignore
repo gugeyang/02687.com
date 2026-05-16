@@ -5,8 +5,8 @@ public/
 resources/_gen/
 .hugo_build.lock
 
-# 内部项目管理与商业机密文档（只留本地，不上传GitHub）
-DEVELOPMENT_PLAN.md
+# 内部项目管理与商业机密文档
+# DEVELOPMENT_PLAN.md 已纳入版本控制，AI 代理可从仓库直接读取
 CONTENT_MASTER_RECORD.md
 REPLAY_OPTIMIZATION.md
 

@@ -2,7 +2,7 @@
 title: "Deploying Nextcloud as a Self-Hosted Google Workspace Alternative for Universities"
 date: "2024-05-14T10:00:00+08:00"
 image: "images/blog/blog-post-5.jpg"
-author: "EdTech Architect"
+author: "Alex Chen"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Nextcloud", "Ceph", "S3", "Kubernetes", "Data Sovereignty", "Collabora Online"]
@@ -12,8 +12,6 @@ description: "Production architecture for deploying self-hosted Nextcloud to rep
 Google pulled the rug in 2022. The unlimited storage that universities had relied on for a decade suddenly came with quotas and a price tag. Our storage audit at Global Tech University showed 47TB across faculty accounts — at Google's per-user pricing, the annual bill would have been absurd. The provost's office wanted alternatives. We had six months.
 
 We chose Nextcloud, not because it was the only option, but because it was the only self-hosted platform mature enough to handle collaborative editing, mobile sync, and federation with partner institutions without depending on a third-party SaaS vendor who might change terms again.
-
-<!-- ADSENSE_INSERT_HERE -->
 
 ## Why Object Storage Beats NFS for Nextcloud at University Scale
 
