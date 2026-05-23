@@ -183,11 +183,16 @@ def select_topic(manual_topic=None):
         print("[Error] 推荐选题列表为空，请检查 DEVELOPMENT_PLAN.md 第六节。")
         return None, None
 
-    # 取第一个未写过的
-    topic = topics[0]
-    print(f"[Topic] 自动选题 (P{topic['priority']}): {topic['title']}")
-    print(f"[Topic] 核心关键词: {topic['keywords']}")
-    return topic["title"], topic["keywords"]
+    # 过滤掉文件已存在的选题
+    for topic in topics:
+        slug = keyword_to_slug(topic["title"])
+        if not (CONTENT_DIR / f"{slug}.md").exists():
+            print(f"[Topic] 自动选题 (P{topic['priority']}): {topic['title']}")
+            print(f"[Topic] 核心关键词: {topic['keywords']}")
+            return topic["title"], topic["keywords"]
+
+    print("[Topic] 所有推荐选题均已发布完毕！")
+    return None, None
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
