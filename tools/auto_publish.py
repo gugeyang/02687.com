@@ -41,9 +41,9 @@ IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 # 模型降级列表：主模型配额耗尽时自动尝试下一个
 GENERATOR_MODELS = [
-    "gemini-2.0-flash",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
+    "gemini-2.5-flash",       # 最新最强，优先使用
+    "gemini-2.0-flash",       # 降级一档
+    "gemini-2.0-flash-lite",  # 最后兜底
 ]
 GENERATOR_MODEL = GENERATOR_MODELS[0]  # 默认主模型（日志显示用）
 MAX_REVIEW_RETRIES = 2   # 审核不通过最多重写几次
@@ -257,7 +257,7 @@ author: "Alex Chen"
 type: "post"
 categories: {categories}
 tags: {tags}
-description: "{description_placeholder}"
+description: "[Write a compelling 140-160 character meta description that includes the primary keyword and explains exactly what the reader will learn. Do NOT use generic phrases like 'comprehensive guide'.]"
 ---
 
 STRUCTURE REQUIREMENTS:
@@ -403,7 +403,7 @@ def generate_article(genai, title, keywords, slug, existing_articles, review_fee
     internal_links = build_internal_links_hint(slug, existing_articles)
 
     # 描述占位（由生成模型填写）
-    description_placeholder = f"A comprehensive guide to {title.lower()} for EdTech infrastructure teams."
+    # description 由 Gemini 自行生成（见 prompt 中的指令）
 
     prompt = ARTICLE_PROMPT.format(
         title=title,
@@ -412,7 +412,7 @@ def generate_article(genai, title, keywords, slug, existing_articles, review_fee
         date=date_str,
         categories=json.dumps(categories),
         tags=json.dumps(tags),
-        description_placeholder=description_placeholder,
+
         internal_links=internal_links
     )
 
