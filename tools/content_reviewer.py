@@ -1,0 +1,249 @@
+"""
+content_reviewer.py — 02687.com AI 内容质量审核器
+===================================================
+用独立的 Gemini 调用扮演 Google Search Quality Rater，
+对生成的文章进行7维度打分，返回 pass/fail + 详细反馈。
+
+调用方式：
+    from content_reviewer import ContentReviewer
+    reviewer = ContentReviewer(client)
+    result = reviewer.audit(content, keyword)
+    if result["pass"]:
+        # 发布
+"""
+
+import sys
+import io
+import re
+import json
+import time
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+# 审核通过分数线
+PASS_SCORE = 75
+
+# 禁止项（直接返回 False，不进入打分）
+FORBIDDEN_PATTERNS = [
+    (r'[\u4e00-\u9fff]',                   "包含中文字符"),
+    (r'<!-- ADSENSE_INSERT_HERE -->',       "包含 ADSENSE 占位符（HCU 风险）"),
+    (r'author:\s*"EdTech Architect"',      "author 字段错误（应为 Alex Chen）"),
+    (r'Lorem ipsum',                       "包含 Lorem Ipsum 占位文字"),
+    (r'John Doe',                          "包含违规人名 John Doe"),
+]
+
+AUDIT_PROMPT_TEMPLATE = """
+You are a strict Google Search Quality Rater and an expert in detecting AI-generated content.
+Your task is to evaluate the following blog article for publication on an EdTech infrastructure site (02687.com).
+
+TARGET KEYWORD: "{keyword}"
+
+ARTICLE CONTENT:
+---
+{content}
+---
+
+EVALUATION CRITERIA — Score each dimension and be CRITICAL. Your job is to find problems, not praise.
+
+1. DE-AI-IZATION (0-25 pts)
+   Deduct points for: generic openers ("In today's digital era", "In the ever-evolving landscape"),
+   wishy-washy conclusions ("it depends on your use case" without specifics), overly balanced
+   perspectives with no clear stance, formulaic sentence structures repeated throughout.
+   Full score = reads like a practitioner sharing real experience, not an AI summarizing a topic.
+
+2. E-E-A-T EXPERIENCE SIGNALS (0-25 pts)
+   Deduct points if: no first-person experience ("I've seen", "I spent X hours debugging"),
+   no specific failure scenarios with real error messages or log output, no concrete numbers
+   (time spent, user counts, memory sizes), no admission of mistakes or wrong assumptions.
+   Full score = reader believes a real person with real scars wrote this.
+
+3. GOOGLE HCU COMPLIANCE (0-20 pts)
+   Deduct points if: the article is "about" the topic rather than solving the specific search intent,
+   if a reader searching "{keyword}" would leave unsatisfied, if it could be summarized as
+   "here is a balanced overview" instead of "here is exactly how to do this".
+   Full score = directly and completely answers what someone searching "{keyword}" needs.
+
+4. TECHNICAL DEPTH (0-15 pts)
+   Deduct points for: code blocks that are pseudocode or incomplete, configuration values that are
+   obviously placeholders without explanation, H2 headings that contain no keywords,
+   missing explanation of WHY a configuration choice was made.
+   Full score = a sysadmin could follow this article and reproduce the result.
+
+5. STRUCTURE QUALITY (0-10 pts)
+   Deduct points if: fewer than 4 H2 headings, no "Gotchas" or troubleshooting section,
+   internal links to other articles are missing or are at the end in a list (not woven into text),
+   article is under 900 words.
+   Full score = follows all structural SEO requirements.
+
+6. OVERALL PUBLISHABILITY (0-5 pts)
+   Your holistic assessment: would you be comfortable if this article ranked #1 on Google
+   for "{keyword}"? Does it represent genuine expertise?
+
+RESPONSE FORMAT — Return ONLY valid JSON, no markdown wrapper, no explanation outside the JSON:
+{{
+  "score": <integer 0-100>,
+  "pass": <true if score >= {pass_score}, false otherwise>,
+  "dimension_scores": {{
+    "de_ai": <0-25>,
+    "eeat": <0-25>,
+    "hcu": <0-20>,
+    "technical_depth": <0-15>,
+    "structure": <0-10>,
+    "overall": <0-5>
+  }},
+  "critical_issues": [
+    "<specific problem 1>",
+    "<specific problem 2>"
+  ],
+  "rewrite_instructions": "<Concrete, actionable instructions for rewriting. Be specific: name the section, quote the problematic sentence, and say exactly what to replace it with or what to add.>"
+}}
+"""
+
+
+class ContentReviewer:
+    """
+    AI 内容审核器。
+    使用独立的 Gemini 调用，以 Google Quality Rater 视角审核文章。
+    """
+
+    def __init__(self, client, model_name="gemini-2.0-flash"):
+        self.client = client
+        self.model_name = model_name
+        self.fallback_models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
+
+    def _check_forbidden(self, content):
+        """检测禁止项，命中任何一条直接返回失败原因"""
+        for pattern, reason in FORBIDDEN_PATTERNS:
+            if re.search(pattern, content):
+                return reason
+        return None
+
+    def _extract_json(self, raw_text):
+        """从模型输出中提取 JSON，容错处理 markdown 包裹"""
+        text = raw_text.strip()
+        # 移除可能的 ```json ... ``` 包裹
+        text = re.sub(r'^```(?:json)?\s*\n', '', text)
+        text = re.sub(r'\n```\s*$', '', text)
+        text = text.strip()
+
+        # 尝试找到 { ... } 块
+        match = re.search(r'\{.*\}', text, re.DOTALL)
+        if match:
+            text = match.group(0)
+
+        return json.loads(text)
+
+    def audit(self, content, keyword, verbose=True):
+        """
+        对文章内容进行审核。
+
+        Returns:
+            dict: {
+                "pass": bool,
+                "score": int,
+                "dimension_scores": dict,
+                "critical_issues": list,
+                "rewrite_instructions": str,
+                "forbidden_hit": str or None
+            }
+        """
+        if verbose:
+            print("\n[Reviewer] 开始质量审核...")
+
+        # Step 1: 禁止项快速检测
+        forbidden = self._check_forbidden(content)
+        if forbidden:
+            print(f"[Reviewer] ❌ 禁止项命中，直接拒绝: {forbidden}")
+            return {
+                "pass": False,
+                "score": 0,
+                "forbidden_hit": forbidden,
+                "critical_issues": [forbidden],
+                "rewrite_instructions": f"必须修复禁止项: {forbidden}",
+                "dimension_scores": {}
+            }
+
+        # Step 2: 调用 Gemini 审核
+        prompt = AUDIT_PROMPT_TEMPLATE.format(
+            keyword=keyword,
+            content=content[:6000],   # 截断防止超 token
+            pass_score=PASS_SCORE
+        )
+
+        try:
+            last_err = None
+            response = None
+            for m in self.fallback_models:
+                try:
+                    response = self.client.models.generate_content(
+                        model=m,
+                        contents=prompt
+                    )
+                    break
+                except Exception as fe:
+                    if "429" in str(fe) or "RESOURCE_EXHAUSTED" in str(fe):
+                        print(f"[Reviewer] ⚠ {m} 配额耗尽，降级...")
+                        last_err = fe
+                        time.sleep(3)
+                        continue
+                    raise fe
+            if response is None:
+                raise last_err
+            result = self._extract_json(response.text)
+            result["forbidden_hit"] = None
+
+            # 打印审核结果
+            if verbose:
+                self._print_result(result)
+
+            return result
+
+        except json.JSONDecodeError as e:
+            print(f"[Reviewer] ⚠ JSON 解析失败: {e}")
+            print(f"[Reviewer] 原始输出: {response.text[:300]}")
+            # 解析失败时保守处理：返回失败，要求人工检查
+            return {
+                "pass": False,
+                "score": 0,
+                "forbidden_hit": None,
+                "critical_issues": ["审核器 JSON 解析失败，需要人工检查"],
+                "rewrite_instructions": "审核结果解析异常，请手动检查文章质量后使用 --skip-review 参数发布。",
+                "dimension_scores": {}
+            }
+        except Exception as e:
+            print(f"[Reviewer] ❌ 审核 API 调用失败: {e}")
+            return {
+                "pass": False,
+                "score": 0,
+                "forbidden_hit": None,
+                "critical_issues": [f"审核 API 异常: {str(e)}"],
+                "rewrite_instructions": "审核器异常，请检查 API Key 和网络连接。",
+                "dimension_scores": {}
+            }
+
+    def _print_result(self, result):
+        """格式化打印审核结果"""
+        score = result.get("score", 0)
+        passed = result.get("pass", False)
+        dims = result.get("dimension_scores", {})
+
+        status = "✅ 通过" if passed else "❌ 未通过"
+        print(f"\n[Reviewer] 审核结果: {status}  总分: {score}/100 (通过线: {PASS_SCORE})")
+        print(f"[Reviewer] 维度得分:")
+        print(f"           去AI化:    {dims.get('de_ai', '?')}/25")
+        print(f"           E-E-A-T:   {dims.get('eeat', '?')}/25")
+        print(f"           HCU合规:   {dims.get('hcu', '?')}/20")
+        print(f"           技术深度:  {dims.get('technical_depth', '?')}/15")
+        print(f"           结构质量:  {dims.get('structure', '?')}/10")
+        print(f"           综合判断:  {dims.get('overall', '?')}/5")
+
+        issues = result.get("critical_issues", [])
+        if issues:
+            print(f"[Reviewer] 主要问题:")
+            for issue in issues:
+                print(f"           • {issue}")
+
+        if not passed:
+            instructions = result.get("rewrite_instructions", "")
+            if instructions:
+                print(f"[Reviewer] 重写指导: {instructions[:300]}...")

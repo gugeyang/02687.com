@@ -338,7 +338,7 @@ git push
 | 🔴 P1 | Installing Moodle on Ubuntu 22.04 with Docker Compose: Step-by-Step | moodle docker ubuntu, install moodle docker | ~880 | ✅ 已发布 |
 | 🔴 P1 | Canvas LMS vs Moodle 2026: Technical Comparison for University IT Teams | canvas vs moodle, lms comparison university | ~720 | ✅ 已发布 |
 | 🟡 P2 | Securing Moodle with HTTPS Using Let's Encrypt and Nginx Reverse Proxy | moodle ssl nginx, moodle https setup | ~590 | ✅ 已发布 |
-| 🟡 P2 | Open Source LMS Comparison: Moodle vs Open edX vs Canvas vs Chamilo | open source lms comparison 2026 | ~540 | ⬜ 未写 |
+| 🟡 P2 | Open Source LMS Comparison: Moodle vs Open edX vs Canvas vs Chamilo | open source lms comparison 2026 | ~540 | ✅ 已发布 |
 | 🟡 P2 | Automated Moodle Backup to AWS S3 with Cron and rclone | moodle backup s3, moodle automated backup | ~430 | ✅ 已发布 |
 | 🟢 P3 | Integrating Zoom into Canvas LMS for Hybrid Virtual Classrooms | zoom canvas lms integration | ~380 | ⬜ 未写 |
 | 🟢 P3 | Building a Student Performance Dashboard with Grafana and Moodle Data | moodle grafana dashboard, lms analytics | ~290 | ⬜ 未写 |
