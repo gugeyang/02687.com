@@ -18,8 +18,6 @@ import re
 import json
 import time
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
 # 审核通过分数线
 PASS_SCORE = 75
 
@@ -109,7 +107,7 @@ class ContentReviewer:
     def __init__(self, client, model_name="gemini-2.0-flash"):
         self.client = client
         self.model_name = model_name
-        self.fallback_models = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
+        self.fallback_models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.0-flash-lite"]
 
     def _check_forbidden(self, content):
         """检测禁止项，命中任何一条直接返回失败原因"""
@@ -166,7 +164,7 @@ class ContentReviewer:
         # Step 2: 调用 Gemini 审核
         prompt = AUDIT_PROMPT_TEMPLATE.format(
             keyword=keyword,
-            content=content[:6000],   # 截断防止超 token
+            content=content[:40000],   # 放宽截断限制（Gemini 2.5 Flash 完全支持长上下文）
             pass_score=PASS_SCORE
         )
 
