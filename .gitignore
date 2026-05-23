@@ -17,3 +17,6 @@ Thumbs.db
 # 编辑器配置
 .vscode/settings.json
 *.swp
+
+# 环境变量及密钥（绝对禁止上传）
+.env
