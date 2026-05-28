@@ -477,6 +477,29 @@ def update_master_record(title, categories, keywords_str, slug):
     print(f"[Record] 总控表已更新")
 
 
+def update_dev_plan_status(title):
+    """发布后把 DEVELOPMENT_PLAN.md 第六节对应选题的状态由 ⬜ 改为 ✅。
+    匹配不到（如手动指定的非列表主题）时静默跳过。"""
+    if not DEV_PLAN.exists():
+        return
+    lines = DEV_PLAN.read_text(encoding='utf-8').splitlines(keepends=True)
+    in_section = False
+    for i, line in enumerate(lines):
+        if line.startswith('## 六'):
+            in_section = True
+            continue
+        if in_section and line.startswith('## 七'):
+            break
+        if in_section and line.startswith('|') and '⬜' in line:
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) >= 3 and parts[2] == title:
+                lines[i] = line.replace('⬜ 未写', '✅ 已发布')
+                DEV_PLAN.write_text(''.join(lines), encoding='utf-8')
+                print(f"[Plan] 第六节选题状态已回写: ⬜ → ✅")
+                return
+    print(f"[Plan] 第六节未找到匹配选题，跳过状态回写")
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # Git 推送
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -601,6 +624,9 @@ def run(manual_topic=None, dry_run=False, skip_review=False):
     # ⑦ 更新总控表
     categories = infer_categories(title, keywords)
     update_master_record(title, categories, keywords, slug)
+
+    # ⑦.5 回写第六节选题状态 ⬜ → ✅
+    update_dev_plan_status(title)
 
     # ⑧ Git 推送
     git_push(f"auto-publish: {title}")

@@ -340,10 +340,20 @@ git push
 | 🟡 P2 | Securing Moodle with HTTPS Using Let's Encrypt and Nginx Reverse Proxy | moodle ssl nginx, moodle https setup | ~590 | ✅ 已发布 |
 | 🟡 P2 | Open Source LMS Comparison: Moodle vs Open edX vs Canvas vs Chamilo | open source lms comparison 2026 | ~540 | ✅ 已发布 |
 | 🟡 P2 | Automated Moodle Backup to AWS S3 with Cron and rclone | moodle backup s3, moodle automated backup | ~430 | ✅ 已发布 |
-| 🟢 P3 | Integrating Zoom into Canvas LMS for Hybrid Virtual Classrooms | zoom canvas lms integration | ~380 | ⬜ 未写 |
-| 🟢 P3 | Building a Student Performance Dashboard with Grafana and Moodle Data | moodle grafana dashboard, lms analytics | ~290 | ⬜ 未写 |
-| 🟢 P3 | Moodle Plugin Development: Building Your First Custom Activity Module | moodle plugin development, moodle custom module | ~260 | ⬜ 未写 |
-| 🟢 P3 | Running Moodle on Kubernetes: Helm Chart Deployment Guide | moodle kubernetes, moodle helm chart | ~220 | ⬜ 未写 |
+| 🟢 P3 | Integrating Zoom into Canvas LMS for Hybrid Virtual Classrooms | zoom canvas lms integration | ~380 | ✅ 已发布 |
+| 🟢 P3 | Building a Student Performance Dashboard with Grafana and Moodle Data | moodle grafana dashboard, lms analytics | ~290 | ✅ 已发布 |
+| 🟢 P3 | Moodle Plugin Development: Building Your First Custom Activity Module | moodle plugin development, moodle custom module | ~260 | ✅ 已发布 |
+| 🟢 P3 | Running Moodle on Kubernetes: Helm Chart Deployment Guide | moodle kubernetes, moodle helm chart | ~220 | ✅ 已发布 |
+| 🔴 P1 | Moodle MariaDB Performance Tuning for 5,000 Concurrent Users | moodle mariadb tuning, moodle database performance | ~780 | ✅ 已发布 |
+| 🔴 P1 | Moodle LDAP Authentication with Active Directory: Setup Guide | moodle ldap, moodle active directory auth | ~640 | ⬜ 未写 |
+| 🟡 P2 | Installing Open edX with Tutor and Docker: Production Guide | open edx tutor install, open edx docker | ~560 | ⬜ 未写 |
+| 🟡 P2 | Moodle Security Hardening Checklist for Production Servers | moodle security hardening, secure moodle server | ~520 | ⬜ 未写 |
+| 🟡 P2 | Configuring Moodle SMTP Email with SPF and DKIM to Avoid Spam | moodle smtp setup, moodle email not sending | ~470 | ⬜ 未写 |
+| 🟡 P2 | Load Balancing Moodle with HAProxy for High Availability | moodle haproxy, moodle high availability | ~410 | ⬜ 未写 |
+| 🟢 P3 | Speeding Up Moodle Globally with Cloudflare CDN Caching | moodle cloudflare, moodle cdn setup | ~350 | ⬜ 未写 |
+| 🟢 P3 | Automating Moodle Deployment with Ansible Playbooks | moodle ansible, automate moodle deployment | ~300 | ⬜ 未写 |
+| 🟢 P3 | Troubleshooting Moodle Cron Jobs and Scheduled Tasks | moodle cron not running, moodle scheduled tasks | ~280 | ⬜ 未写 |
+| 🟢 P3 | GDPR Compliance in Moodle: Data Privacy Configuration | moodle gdpr, moodle data privacy | ~240 | ⬜ 未写 |
 
 **当前已覆盖的核心关键词（禁止重复）：**
 - Docker + Moodle 自建 LMS
