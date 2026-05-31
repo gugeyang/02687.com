@@ -345,7 +345,7 @@ git push
 | 🟢 P3 | Moodle Plugin Development: Building Your First Custom Activity Module | moodle plugin development, moodle custom module | ~260 | ✅ 已发布 |
 | 🟢 P3 | Running Moodle on Kubernetes: Helm Chart Deployment Guide | moodle kubernetes, moodle helm chart | ~220 | ✅ 已发布 |
 | 🔴 P1 | Moodle MariaDB Performance Tuning for 5,000 Concurrent Users | moodle mariadb tuning, moodle database performance | ~780 | ✅ 已发布 |
-| 🔴 P1 | Moodle LDAP Authentication with Active Directory: Setup Guide | moodle ldap, moodle active directory auth | ~640 | ⬜ 未写 |
+| 🔴 P1 | Moodle LDAP Authentication with Active Directory: Setup Guide | moodle ldap, moodle active directory auth | ~640 | ✅ 已发布 |
 | 🟡 P2 | Installing Open edX with Tutor and Docker: Production Guide | open edx tutor install, open edx docker | ~560 | ⬜ 未写 |
 | 🟡 P2 | Moodle Security Hardening Checklist for Production Servers | moodle security hardening, secure moodle server | ~520 | ⬜ 未写 |
 | 🟡 P2 | Configuring Moodle SMTP Email with SPF and DKIM to Avoid Spam | moodle smtp setup, moodle email not sending | ~470 | ⬜ 未写 |
