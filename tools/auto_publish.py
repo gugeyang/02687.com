@@ -41,6 +41,7 @@ IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 # 模型降级列表：主模型配额耗尽时自动尝试下一个
 GENERATOR_MODELS = [
+    "gemini-3.5-flash",       # 最新最强
     "gemini-2.5-flash",       # 最新最强，优先使用
     "gemini-2.0-flash",       # 降级一档
     "gemini-2.0-flash-lite",  # 最后兜底
