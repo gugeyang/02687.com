@@ -348,7 +348,7 @@ git push
 | 🔴 P1 | Moodle LDAP Authentication with Active Directory: Setup Guide | moodle ldap, moodle active directory auth | ~640 | ✅ 已发布 |
 | 🟡 P2 | Installing Open edX with Tutor and Docker: Production Guide | open edx tutor install, open edx docker | ~560 | ✅ 已发布 |
 | 🟡 P2 | Moodle Security Hardening Checklist for Production Servers | moodle security hardening, secure moodle server | ~520 | ✅ 已发布 |
-| 🟡 P2 | Configuring Moodle SMTP Email with SPF and DKIM to Avoid Spam | moodle smtp setup, moodle email not sending | ~470 | ⬜ 未写 |
+| 🟡 P2 | Configuring Moodle SMTP Email with SPF and DKIM to Avoid Spam | moodle smtp setup, moodle email not sending | ~470 | ✅ 已发布 |
 | 🟡 P2 | Load Balancing Moodle with HAProxy for High Availability | moodle haproxy, moodle high availability | ~410 | ⬜ 未写 |
 | 🟢 P3 | Speeding Up Moodle Globally with Cloudflare CDN Caching | moodle cloudflare, moodle cdn setup | ~350 | ⬜ 未写 |
 | 🟢 P3 | Automating Moodle Deployment with Ansible Playbooks | moodle ansible, automate moodle deployment | ~300 | ⬜ 未写 |

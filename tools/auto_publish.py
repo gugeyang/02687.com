@@ -296,18 +296,36 @@ def keyword_to_slug(title):
     return slug[:80]
 
 
+# 分类规则：按词边界(\b)匹配，避免子串误判（旧版 'ai' in 'email' 把邮件文章错分到 Data and AI）。
+# 末尾不带 \b 的是词干（如 deploy 匹配 deploy/deployment，automat 匹配 automation/automate）。
+CATEGORY_RULES = [
+    ("Infrastructure and Cloud", [
+        r'\bdocker\b', r'\bkubernetes\b', r'\bk8s\b', r'\bnginx\b', r'\bapache\b',
+        r'\bssl\b', r'\btls\b', r'\bhttps?\b', r'\bbackup\b', r'\bserver\b',
+        r'\bcloud\b', r'\bdeploy', r'\bvps\b', r'\bproxy\b', r'\bdns\b',
+        r'\bsmtp\b', r'\bemail\b', r'\bmail\b', r'\bspf\b', r'\bdkim\b', r'\bpostfix\b',
+        r'\bredis\b', r'\bperformance\b', r'\bscaling\b', r'\bcdn\b', r'\bdocker-compose\b',
+    ]),
+    ("Dev Log", [
+        r'\bapi\b', r'\bpython\b', r'\bbash\b', r'\bscript', r'\bautomat',
+        r'\bplugin\b', r'\bdev\b', r'\bcode\b', r'\bwebhook\b', r'\bcli\b', r'\bgit\b',
+    ]),
+    ("Security", [
+        r'\bsso\b', r'\bsaml\b', r'\bsecurity\b', r'\bauth', r'\bldap\b',
+        r'\bkeycloak\b', r'\boauth\b', r'\bfirewall\b', r'\bgdpr\b', r'\bencryption\b',
+    ]),
+    ("Data and AI", [
+        r'\bdata\b', r'\bdatabase\b', r'\bai\b', r'\bml\b', r'\bllm\b',
+        r'\banalytics\b', r'\bgraph', r'\betl\b', r'\bxapi\b', r'\breport',
+    ]),
+]
+
+
 def infer_categories(title, keywords):
-    """根据标题和关键词推断 Hugo 分类"""
+    """根据标题和关键词推断 Hugo 分类（词边界匹配，避免 'ai' 命中 'email' 这类误判）。"""
     text = (title + " " + keywords).lower()
-    categories = []
-    if any(w in text for w in ['docker', 'kubernetes', 'nginx', 'ssl', 'backup', 'server', 'cloud', 'deploy']):
-        categories.append("Infrastructure and Cloud")
-    if any(w in text for w in ['api', 'python', 'script', 'automat', 'plugin', 'dev', 'code']):
-        categories.append("Dev Log")
-    if any(w in text for w in ['sso', 'saml', 'security', 'auth', 'ldap', 'keycloak']):
-        categories.append("Security")
-    if any(w in text for w in ['data', 'ai', 'analytics', 'graph', 'etl', 'xapi']):
-        categories.append("Data and AI")
+    categories = [cat for cat, patterns in CATEGORY_RULES
+                  if any(re.search(p, text) for p in patterns)]
     return categories if categories else ["Infrastructure and Cloud"]
 
 
