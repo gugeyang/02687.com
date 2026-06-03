@@ -6,7 +6,7 @@ rem  multibyte (Chinese) chars under chcp 65001 and breaks lines.
 rem  chcp 65001 is still needed so the script's UTF-8 logs show.
 rem ============================================================
 chcp 65001 >nul
-color 0A
+color 0B
 title 02687.com Auto Publisher
 
 cd /d "%~dp0"
