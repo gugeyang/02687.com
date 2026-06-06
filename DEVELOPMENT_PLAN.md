@@ -350,7 +350,7 @@ git push
 | 🟡 P2 | Moodle Security Hardening Checklist for Production Servers | moodle security hardening, secure moodle server | ~520 | ✅ 已发布 |
 | 🟡 P2 | Configuring Moodle SMTP Email with SPF and DKIM to Avoid Spam | moodle smtp setup, moodle email not sending | ~470 | ✅ 已发布 |
 | 🟡 P2 | Load Balancing Moodle with HAProxy for High Availability | moodle haproxy, moodle high availability | ~410 | ✅ 已发布 |
-| 🟢 P3 | Speeding Up Moodle Globally with Cloudflare CDN Caching | moodle cloudflare, moodle cdn setup | ~350 | ⬜ 未写 |
+| 🟢 P3 | Speeding Up Moodle Globally with Cloudflare CDN Caching | moodle cloudflare, moodle cdn setup | ~350 | ✅ 已发布 |
 | 🟢 P3 | Automating Moodle Deployment with Ansible Playbooks | moodle ansible, automate moodle deployment | ~300 | ⬜ 未写 |
 | 🟢 P3 | Troubleshooting Moodle Cron Jobs and Scheduled Tasks | moodle cron not running, moodle scheduled tasks | ~280 | ⬜ 未写 |
 | 🟢 P3 | GDPR Compliance in Moodle: Data Privacy Configuration | moodle gdpr, moodle data privacy | ~240 | ⬜ 未写 |
