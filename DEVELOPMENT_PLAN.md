@@ -352,7 +352,7 @@ git push
 | 🟡 P2 | Load Balancing Moodle with HAProxy for High Availability | moodle haproxy, moodle high availability | ~410 | ✅ 已发布 |
 | 🟢 P3 | Speeding Up Moodle Globally with Cloudflare CDN Caching | moodle cloudflare, moodle cdn setup | ~350 | ✅ 已发布 |
 | 🟢 P3 | Automating Moodle Deployment with Ansible Playbooks | moodle ansible, automate moodle deployment | ~300 | ✅ 已发布 |
-| 🟢 P3 | Troubleshooting Moodle Cron Jobs and Scheduled Tasks | moodle cron not running, moodle scheduled tasks | ~280 | ⬜ 未写 |
+| 🟢 P3 | Troubleshooting Moodle Cron Jobs and Scheduled Tasks | moodle cron not running, moodle scheduled tasks | ~280 | ✅ 已发布 |
 | 🟢 P3 | GDPR Compliance in Moodle: Data Privacy Configuration | moodle gdpr, moodle data privacy | ~240 | ⬜ 未写 |
 
 **当前已覆盖的核心关键词（禁止重复）：**
