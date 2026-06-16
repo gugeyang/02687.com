@@ -355,6 +355,26 @@ git push
 | 🟢 P3 | Troubleshooting Moodle Cron Jobs and Scheduled Tasks | moodle cron not running, moodle scheduled tasks | ~280 | ✅ 已发布 |
 | 🟢 P3 | GDPR Compliance in Moodle: Data Privacy Configuration | moodle gdpr, moodle data privacy | ~240 | ✅ 已发布 |
 
+### 6.1 高 CPC 买家意图选题（广告变现方向 · 真实 Keyword Planner 数据 2026-06-17）
+
+> 数据来源：Google Keyword Planner（地区 US）。搜索量为真实区间，CPC 为页首广告高价（决定 AdSense 收入）。
+> 全部为"低竞争 + 高出价"的夹缝词，新站可排。文章形态为 LMS 选型/对比/榜单（命中 `is_buyer_guide` 走买家指南 prompt）。
+
+| 优先级 | 建议文章标题 | 核心长尾词 | 月搜索量 / CPC | 状态 |
+|--------|------------|-----------|------------|------|
+| 🔴 P1 | Best Self-Hosted LMS: Open-Source Platforms Compared | best self hosted lms, open source lms, open learning management system | 1K-10K / $30-59 | ⬜ 待写 |
+| 🔴 P1 | Best LMS for Customer Training (2026) | customer training lms, best lms for customer training, customer lms | 100-1K / $254-269 | ⬜ 待写 |
+| 🔴 P1 | Best Enterprise LMS for Corporate Training | best enterprise lms, lms for corporate training, corporate lms | 100-1K / $93-230 | ⬜ 待写 |
+| 🔴 P1 | Cloud-Based LMS: The Complete Buyer's Guide | cloud based lms, cloud lms, hosted lms | 10K-100K / $86-108 | ⬜ 待写 |
+| 🟡 P2 | Best LMS for Healthcare & Compliance Training | healthcare lms, lms compliance training, compliance lms | 100-1K / $116-159 | ⬜ 待写 |
+| 🟡 P2 | Best LMS for Nonprofits | lms for nonprofits, best lms for nonprofits | 100-1K / $155-187 | ⬜ 待写 |
+| 🟡 P2 | Best LMS for Retail, Restaurants & Hospitality | lms for retail, best lms for restaurants, hospitality lms | 100-1K / $100-450 | ⬜ 待写 |
+| 🟡 P2 | What Is a SCORM-Compliant LMS? (+ Best Options) | scorm compliant lms, scorm lms | 100-1K / $68-124 | ⬜ 待写 |
+| 🟢 P3 | White Label LMS Platforms Compared | white label lms, white label e learning platform | 100-1K / $123-128 | ⬜ 待写 |
+| 🟢 P3 | Gamified LMS: Best Platforms for Engagement | gamified lms, gamified learning management system | 100-1K / $124 | ⬜ 待写 |
+| 🟢 P3 | How Much Does an LMS Cost? Pricing Guide 2026 | lms cost, learning management system cost | 100-1K / $59-71 | ⬜ 待写 |
+| 🟢 P3 | Best Free LMS Platforms (2026) | free online lms, free lms online | 100-1K / $70 | ⬜ 待写 |
+
 **当前已覆盖的核心关键词（禁止重复）：**
 - Docker + Moodle 自建 LMS
 - Neo4j 知识图谱 + 教育

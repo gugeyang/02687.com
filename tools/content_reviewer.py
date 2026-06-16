@@ -98,6 +98,69 @@ RESPONSE FORMAT — Return ONLY valid JSON, no markdown wrapper, no explanation 
 """
 
 
+BUYER_GUIDE_AUDIT_PROMPT = """
+You are a strict Google Search Quality Rater and an expert in detecting AI-generated, low-value
+"best X" affiliate content. You are evaluating an LMS BUYER'S GUIDE / COMPARISON article for
+publication on 02687.com. This is NOT a technical tutorial — judge it as a buyer would.
+
+TARGET KEYWORD: "{keyword}"
+
+ARTICLE CONTENT:
+---
+{content}
+---
+
+EVALUATION CRITERIA — Score each dimension and be CRITICAL. Your job is to find problems, not praise.
+
+1. DE-AI-IZATION (0-20 pts)
+   Deduct for: generic openers, formulaic structure, only-positive product descriptions that read
+   as sponsored, vague "it depends" endings with no real recommendation.
+   Full score = reads like a real consultant giving honest, opinionated buying advice.
+
+2. FIRST-HAND EVALUATION SIGNALS / E-E-A-T (0-20 pts)
+   Deduct if: no first-person evaluation experience ("when I deployed X for a client", "I'd avoid Y because"),
+   no specific scenarios, no sense the author actually used these products.
+   Full score = reader believes a real practitioner who has used these tools wrote this.
+
+3. BUYER-INTENT SATISFACTION / HCU (0-20 pts)
+   Deduct if: a reader searching "{keyword}" still wouldn't know which to choose after reading,
+   if it's a generic overview rather than decision help.
+   Full score = directly helps the reader DECIDE for their situation.
+
+4. COMPARISON DEPTH & ACCURACY (0-20 pts)
+   Deduct if: fewer than 5 real products compared, missing a comparison TABLE, products covered
+   with only pros and no cons, OR any sign of FABRICATED products/prices/statistics/testimonials.
+   Full score = 5+ real LMS products, balanced pros/cons each, a clear comparison table, no invented facts.
+
+5. DECISION GUIDANCE (0-10 pts)
+   Deduct if: no clear winner named, no by-scenario recommendations (budget/team size/industry).
+   Full score = confident, specific recommendations for different buyer situations.
+
+6. STRUCTURE QUALITY (0-10 pts)
+   Deduct if: no comparison table, no FAQ section, fewer than 4 headings, internal links missing.
+   Full score = comparison table + per-product sections + FAQ + woven internal links.
+
+RESPONSE FORMAT — Return ONLY valid JSON, no markdown wrapper, no explanation outside the JSON:
+{{
+  "score": <integer 0-100>,
+  "pass": <true if score >= {pass_score}, false otherwise>,
+  "dimension_scores": {{
+    "de_ai": <0-20>,
+    "eeat": <0-20>,
+    "hcu": <0-20>,
+    "comparison_depth": <0-20>,
+    "decision_guidance": <0-10>,
+    "structure": <0-10>
+  }},
+  "critical_issues": [
+    "<specific problem 1>",
+    "<specific problem 2>"
+  ],
+  "rewrite_instructions": "<Concrete, actionable instructions for rewriting. Be specific: name the section, quote the problematic sentence, and say exactly what to replace it with or what to add.>"
+}}
+"""
+
+
 class ContentReviewer:
     """
     AI 内容审核器。
@@ -131,9 +194,12 @@ class ContentReviewer:
 
         return json.loads(text)
 
-    def audit(self, content, keyword, verbose=True):
+    def audit(self, content, keyword, content_type="technical", verbose=True):
         """
         对文章内容进行审核。
+
+        content_type: "technical"（技术教程）或 "buyer_guide"（LMS 买家指南/对比），
+                      决定用哪套评分标准。
 
         Returns:
             dict: {
@@ -161,8 +227,11 @@ class ContentReviewer:
                 "dimension_scores": {}
             }
 
-        # Step 2: 调用 Gemini 审核
-        prompt = AUDIT_PROMPT_TEMPLATE.format(
+        # Step 2: 调用 Gemini 审核（按内容类型选评分标准）
+        template = BUYER_GUIDE_AUDIT_PROMPT if content_type == "buyer_guide" else AUDIT_PROMPT_TEMPLATE
+        if verbose and content_type == "buyer_guide":
+            print("[Reviewer] 使用 LMS 买家指南审核标准")
+        prompt = template.format(
             keyword=keyword,
             content=content[:40000],   # 放宽截断限制（Gemini 2.5 Flash 完全支持长上下文）
             pass_score=PASS_SCORE
@@ -227,13 +296,16 @@ class ContentReviewer:
 
         status = "✅ 通过" if passed else "❌ 未通过"
         print(f"\n[Reviewer] 审核结果: {status}  总分: {score}/100 (通过线: {PASS_SCORE})")
-        print(f"[Reviewer] 维度得分:")
-        print(f"           去AI化:    {dims.get('de_ai', '?')}/25")
-        print(f"           E-E-A-T:   {dims.get('eeat', '?')}/25")
-        print(f"           HCU合规:   {dims.get('hcu', '?')}/20")
-        print(f"           技术深度:  {dims.get('technical_depth', '?')}/15")
-        print(f"           结构质量:  {dims.get('structure', '?')}/10")
-        print(f"           综合判断:  {dims.get('overall', '?')}/5")
+        # 维度标签（两套标准通用，缺失的跳过）
+        labels = {
+            "de_ai": "去AI化", "eeat": "E-E-A-T", "hcu": "HCU合规/买家意图",
+            "technical_depth": "技术深度", "structure": "结构质量", "overall": "综合判断",
+            "comparison_depth": "对比深度/准确性", "decision_guidance": "选型建议",
+        }
+        if dims:
+            print(f"[Reviewer] 维度得分:")
+            for key, val in dims.items():
+                print(f"           {labels.get(key, key)}: {val}")
 
         issues = result.get("critical_issues", [])
         if issues:

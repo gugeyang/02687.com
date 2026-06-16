@@ -20,3 +20,11 @@ Thumbs.db
 
 # 环境变量及密钥（绝对禁止上传）
 .env
+
+# Python 字节码缓存
+__pycache__/
+*.pyc
+
+# 关键词调研原始导出（Keyword Planner CSV，本地分析用，不入库）
+Keyword Stats *.csv
+tools/keyword_trends_result.md

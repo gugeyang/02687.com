@@ -287,6 +287,84 @@ Output the article starting directly with ---, no markdown wrapper around it.
 """
 
 
+# ─── 买家指南 / LMS 选型对比类 Prompt（高 CPC 广告变现方向）─────────────────────
+# 这类文章面向"想选购 LMS 的买家"，形态是榜单/对比/选型指南，而非命令行教程。
+# 广告主在这类页面出价高（$50–450 页首出价），但内容形态完全不同：
+# 不要代码块/Gotchas，要真实产品对比表、优缺点、按场景推荐、FAQ。
+BUYER_GUIDE_PROMPT = """You are Alex Chen, an independent EdTech consultant with 9 years of experience.
+You have personally deployed, migrated, and EVALUATED dozens of learning management systems
+(Moodle, Canvas, Open edX, TalentLMS, Docebo, LearnUpon, Absorb, iSpring, Litmos, and more)
+for universities, corporate training teams, and nonprofits across Asia-Pacific. You help
+organizations CHOOSE the right LMS, so you have hands-on opinions about which tools fit which use case.
+
+Write a comprehensive, genuinely useful LMS buyer's guide for the 02687.com website on: "{title}"
+Primary keywords to optimize for: {keywords}
+
+This is a BUYER'S GUIDE / COMPARISON article, NOT a server tutorial. The reader is deciding which
+LMS to buy or adopt. Your job is to help them DECIDE — confidently and specifically.
+
+AUTHOR VOICE REQUIREMENTS (critical — this determines E-E-A-T score):
+- Write in first person. Use "I've deployed this for...", "When I evaluated X for a client...", "I'd avoid X if..."
+- Reference concrete evaluation experience: specific scenarios, what worked, what frustrated you
+- Take clear stances. NAME a winner for each use case. Never end on "it depends" without a recommendation
+- Be specific about WHO each option is best for (team size, budget level, industry, technical skill)
+
+MANDATORY FRONT MATTER (copy exactly, fill in the blanks):
+---
+title: "{title}"
+date: {date}
+image: "images/blog/{slug}.jpg"
+author: "Alex Chen"
+type: "post"
+categories: {categories}
+tags: {tags}
+description: "[Write a compelling 140-160 character meta description that includes the primary keyword and names the buyer benefit. Do NOT use generic phrases like 'comprehensive guide'.]"
+---
+
+STRUCTURE REQUIREMENTS (follow this buyer-guide shape):
+1. Opening: a specific decision pain the reader faces (e.g. "Most 'best LMS' lists are vendor-sponsored fluff. I've actually run these in production, so here's the honest version."). State who this guide is for.
+2. A short "How I evaluated these" / "What matters for {keywords}" section — your selection criteria
+3. A MARKDOWN COMPARISON TABLE of 5-7 REAL, well-known LMS products with columns like: Platform | Best for | Deployment (cloud/self-hosted) | Standout strength | Pricing model
+4. Per-product mini-reviews: one H2 or H3 per product, each with a one-line "Best for", 2-3 honest pros, 1-2 real cons, and your verdict
+5. A "Which should you choose?" decision section — concrete recommendations BY SCENARIO (small team, tight budget, compliance-heavy industry, etc.)
+6. A short pricing-reality section (describe pricing MODELS — per-user, tiered, quote-based — qualitatively)
+7. An "FAQ" section with 3-5 real questions buyers ask, each answered in 2-3 sentences
+8. Closing with a clear recommendation + internal links to related articles (see below)
+
+ACCURACY GUARDRAILS (violating these fails review):
+- Only mention REAL, currently-existing LMS products. Do NOT invent products or features.
+- Do NOT fabricate specific prices, exact user counts, or made-up statistics. For pricing, describe the MODEL and say readers should verify current pricing on the vendor site.
+- Do NOT invent fake customer testimonials or review quotes.
+- Present balanced pros AND cons for every product — a list of only-positives reads as sponsored and fails.
+
+FORBIDDEN:
+- Do NOT include <!-- ADSENSE_INSERT_HERE -->
+- Do NOT use Chinese characters anywhere in the article
+- Do NOT use phrases: "In today's digital era", "In conclusion", "It is important to note", "As we all know"
+- Do NOT include code blocks or command-line instructions — this is a buyer guide, not a tutorial
+
+WORD COUNT: 1400-1900 words
+
+{internal_links}
+
+Output the article starting directly with ---, no markdown wrapper around it.
+"""
+
+
+# 买家意图信号：命中即用 BUYER_GUIDE_PROMPT + 买家指南审核标准
+BUYER_GUIDE_SIGNALS = re.compile(
+    r'\b(best|top\s+\d+|top\s+lms|vs\.?|versus|comparison|compare|compared|vendors?|'
+    r'list of|cheapest|affordable|pricing|cost|white[\s-]label|gamified|scorm|'
+    r'cloud[\s-]based|free\s+lms|alternatives?|platforms?\s+for|lms\s+for|software\s+for)\b',
+    re.I,
+)
+
+
+def is_buyer_guide(title, keywords):
+    """判断选题是否属于 LMS 买家指南/对比/榜单类（决定生成 prompt 与审核标准）。"""
+    return bool(BUYER_GUIDE_SIGNALS.search(f"{title} {keywords}"))
+
+
 def keyword_to_slug(title):
     """将文章标题转换为 URL slug"""
     slug = title.lower()
@@ -323,6 +401,9 @@ CATEGORY_RULES = [
 
 def infer_categories(title, keywords):
     """根据标题和关键词推断 Hugo 分类（词边界匹配，避免 'ai' 命中 'email' 这类误判）。"""
+    # 买家指南/对比类统一归到 LMS Reviews（高 CPC 广告变现方向）
+    if is_buyer_guide(title, keywords):
+        return ["LMS Reviews"]
     text = (title + " " + keywords).lower()
     categories = [cat for cat, patterns in CATEGORY_RULES
                   if any(re.search(p, text) for p in patterns)]
@@ -337,6 +418,10 @@ def infer_tags(title, keywords):
         'AWS', 'S3', 'Rclone', 'SSL', 'HTTPS', 'PHP-FPM', 'OPcache',
         'Helm', 'Zoom', 'LMS', 'EdTech', 'Python', 'Bash', 'YAML',
         'Keycloak', 'SSO', 'SAML', 'xAPI', 'Backup', 'Performance',
+        # 买家指南/对比类标签
+        'SCORM', 'SaaS', 'Cloud', 'Enterprise', 'Compliance', 'Gamification',
+        'TalentLMS', 'Docebo', 'Absorb', 'LearnUpon', 'Litmos', 'iSpring',
+        'Corporate Training', 'Comparison', 'Self-Hosted', 'Open Source',
     ]
     text = title + " " + keywords
     found = [t for t in tech_terms if t.lower() in text.lower()]
@@ -428,7 +513,11 @@ def generate_article(genai, title, keywords, slug, existing_articles, review_fee
     # 描述占位（由生成模型填写）
     # description 由 Gemini 自行生成（见 prompt 中的指令）
 
-    prompt = ARTICLE_PROMPT.format(
+    # 按选题类型选择 prompt：买家指南(对比/榜单) vs 技术教程
+    prompt_template = BUYER_GUIDE_PROMPT if is_buyer_guide(title, keywords) else ARTICLE_PROMPT
+    print(f"[Generator] 文章类型: {'买家指南/对比' if prompt_template is BUYER_GUIDE_PROMPT else '技术教程'}")
+
+    prompt = prompt_template.format(
         title=title,
         keywords=keywords,
         slug=slug,
@@ -598,7 +687,8 @@ def run(manual_topic=None, dry_run=False, skip_review=False):
         sys.path.insert(0, str(TOOLS_DIR))
         from content_reviewer import ContentReviewer
         reviewer = ContentReviewer(client)
-        result = reviewer.audit(content, keywords)
+        content_type = "buyer_guide" if is_buyer_guide(title, keywords) else "technical"
+        result = reviewer.audit(content, keywords, content_type=content_type)
 
         if result["pass"]:
             review_passed = True
