@@ -322,14 +322,18 @@ description: "[Write a compelling 140-160 character meta description that includ
 ---
 
 STRUCTURE REQUIREMENTS (follow this buyer-guide shape):
-1. Opening: a specific decision pain the reader faces (e.g. "Most 'best LMS' lists are vendor-sponsored fluff. I've actually run these in production, so here's the honest version."). State who this guide is for.
-2. A short "How I evaluated these" / "What matters for {keywords}" section — your selection criteria
-3. A MARKDOWN COMPARISON TABLE of 5-7 REAL, well-known LMS products with columns like: Platform | Best for | Deployment (cloud/self-hosted) | Standout strength | Pricing model
-4. Per-product mini-reviews: one H2 or H3 per product, each with a one-line "Best for", 2-3 honest pros, 1-2 real cons, and your verdict
-5. A "Which should you choose?" decision section — concrete recommendations BY SCENARIO (small team, tight budget, compliance-heavy industry, etc.)
-6. A short pricing-reality section (describe pricing MODELS — per-user, tiered, quote-based — qualitatively)
-7. An "FAQ" section with 3-5 real questions buyers ask, each answered in 2-3 sentences
-8. Closing with a clear recommendation + internal links to related articles (see below)
+HEADING RULES: Every major section below MUST be an H2 (##). Use H3 (###) only for individual
+product names inside the mini-reviews section. Never start the article's section structure at H3 —
+the document outline must have proper H2 top-level sections. Do NOT skip from H2 to H4.
+1. Opening (no heading): a specific decision pain the reader faces (e.g. "Most 'best LMS' lists are vendor-sponsored fluff. I've actually run these in production, so here's the honest version."). State who this guide is for.
+2. ## How I evaluated these / What matters for {keywords} — your selection criteria
+3. ## Comparison table — a MARKDOWN COMPARISON TABLE of 5-7 REAL, well-known LMS products with columns like: Platform | Best for | Deployment (cloud/self-hosted) | Standout strength | Pricing model
+4. ## Product reviews — then one H3 (###) per product, each with a one-line "Best for", 2-3 honest pros, 1-2 real cons, and your verdict
+5. ## Which should you choose? — concrete recommendations BY SCENARIO (small team, tight budget, compliance-heavy industry, etc.)
+6. ## Pricing reality — describe pricing MODELS (per-user, tiered, quote-based) qualitatively
+7. ## FAQ — 3-5 real questions buyers ask, each answered in 2-3 sentences
+8. ## Final recommendation — a clear recommendation + internal links to related articles (see below)
+Keep the keyword phrasing natural — do NOT repeat the exact primary keyword more than 3-4 times in the whole article.
 
 ACCURACY GUARDRAILS (violating these fails review):
 - Only mention REAL, currently-existing LMS products. Do NOT invent products or features.

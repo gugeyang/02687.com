@@ -13,7 +13,7 @@ Most "best LMS" lists you find online are sugar-coated, vendor-sponsored fluff, 
 
 This guide is for organizations that are seriously considering a self-hosted, open-source LMS. Perhaps you need absolute control over your data, deep customization capabilities, or you're simply tired of recurring SaaS fees and want to understand the true total cost of ownership (TCO) of an "open learning management system." If you're looking for honest, practical advice on which platform fits your specific use case, you've come to the right place. I'm going to tell you what worked, what frustrated me, and which tools are genuinely the "best self hosted lms" for different scenarios.
 
-### How I Evaluated These Open-Source LMS Platforms
+## How I Evaluated These Open-Source LMS Platforms
 
 When I'm helping a client choose an LMS, especially a self-hosted, open-source one, my evaluation criteria go beyond a simple feature checklist. Here’s what truly matters:
 
@@ -27,7 +27,7 @@ When I'm helping a client choose an LMS, especially a self-hosted, open-source o
 
 I've tested these platforms with diverse requirements: from a university needing complex grading and student information system integrations to a corporate client requiring advanced compliance tracking and API-driven automation. My recommendations are forged in that real-world experience.
 
-### Open-Source Self-Hosted LMS Comparison Table
+## Open-Source Self-Hosted LMS Comparison Table
 
 Here's a quick overview of the top open-source, self-hosted LMS platforms I often recommend, or at least evaluate, for clients.
 
@@ -41,11 +41,11 @@ Here's a quick overview of the top open-source, self-hosted LMS platforms I ofte
 
 ---
 
-### Per-Product Mini-Reviews
+## Per-Product Mini-Reviews
 
 Let's dive deeper into each platform, straight from my deployment notes.
 
-#### Moodle: The Workhorse of Open-Source Learning
+### Moodle: The Workhorse of Open-Source Learning
 **Best for:** Universities, K-12 schools, SMBs, and non-profits looking for a robust, highly customizable learning platform with a massive ecosystem.
 
 *   **Pros:**
@@ -62,7 +62,7 @@ Let's dive deeper into each platform, straight from my deployment notes.
 
 *   **Verdict:** Moodle is my go-to recommendation for most organizations seeking a powerful, adaptable open-source LMS, provided they have or can acquire the technical expertise for self-hosting. It offers unparalleled control and a vast support network.
 
-#### Open edX: The Scalability Powerhouse
+### Open edX: The Scalability Powerhouse
 **Best for:** Large-scale online courses (MOOCs), corporate training requiring advanced analytics and custom content types, and government initiatives with high user concurrency.
 
 *   **Pros:**
@@ -79,7 +79,7 @@ Let's dive deeper into each platform, straight from my deployment notes.
 
 *   **Verdict:** If your primary concern is massive scalability, deep technical control, and you have a dedicated DevOps team or a generous budget for managed services, Open edX is an outstanding choice. For simpler, smaller-scale needs, it's overkill.
 
-#### Chamilo: The User-Friendly Challenger
+### Chamilo: The User-Friendly Challenger
 **Best for:** Small to medium-sized businesses, NGOs, and K-12 schools seeking a simpler, more intuitive self-hosted LMS than Moodle, with less technical overhead.
 
 *   **Pros:**
@@ -95,7 +95,7 @@ Let's dive deeper into each platform, straight from my deployment notes.
 
 *   **Verdict:** Chamilo is an excellent option if ease of use and a lower initial technical barrier are paramount, and your requirements are more straightforward. It's a solid middle-ground for those who find Moodle too complex but still need full self-hosting control.
 
-#### Sakai: The Academic Veteran
+### Sakai: The Academic Veteran
 **Best for:** Traditional higher education institutions with mature, often complex, academic workflows and a need for strong collaboration tools.
 
 *   **Pros:**
@@ -112,7 +112,7 @@ Let's dive deeper into each platform, straight from my deployment notes.
 
 *   **Verdict:** For universities deeply entrenched in traditional academic models who value robust collaboration and a community-driven development approach, Sakai remains a viable, albeit technically demanding, choice. For others, it’s often too specialized.
 
-#### Canvas LMS (Community Edition): The Modern Alternative (with a catch)
+### Canvas LMS (Community Edition): The Modern Alternative (with a catch)
 **Best for:** Organizations with strong in-house development capabilities (especially Ruby on Rails, React) who desire the modern UI/UX of Canvas but demand absolute self-hosting control and can handle significant technical complexity.
 
 *   **Pros:**
@@ -131,7 +131,7 @@ Let's dive deeper into each platform, straight from my deployment notes.
 
 ---
 
-### Which Should You Choose? Concrete Recommendations by Scenario
+## Which Should You Choose? Concrete Recommendations by Scenario
 
 Choosing the "best self hosted lms" isn't about finding a single winner, but the right fit for *your* specific context. Here are my concrete recommendations:
 
@@ -148,7 +148,7 @@ Choosing the "best self hosted lms" isn't about finding a single winner, but the
 
 ---
 
-### Understanding the Reality of "Open Source" Pricing
+## Understanding the Reality of "Open Source" Pricing
 
 When we talk about "open-source LMS," the biggest misconception is that it's "free." The software license might be free, but the total cost of ownership (TCO) for a self-hosted solution can be substantial. Here's a qualitative look at the pricing models involved:
 
@@ -162,7 +162,7 @@ Always remember that "free software" simply means the cost shifts from recurring
 
 ---
 
-### FAQ: Questions Buyers Actually Ask
+## FAQ: Questions Buyers Actually Ask
 
 1.  **Is "open source" really free?**
     No. While the software license is free, you'll incur costs for hosting infrastructure, technical expertise for deployment and maintenance, customization, security, and ongoing support. It trades licensing fees for internal resource investment.
@@ -181,7 +181,7 @@ Always remember that "free software" simply means the cost shifts from recurring
 
 ---
 
-### My Final Recommendation
+## My Final Recommendation
 
 If you're an organization in the Asia-Pacific region, or anywhere for that matter, genuinely considering a self-hosted, open-source LMS, my advice is to **start with Moodle** for evaluation unless you have a very specific, high-scale requirement that only Open edX can meet, or a very specific development team for Canvas CE.
 
