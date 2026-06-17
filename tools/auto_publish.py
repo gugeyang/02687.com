@@ -39,14 +39,25 @@ STATIC_IMAGES   = [f"images/blog/blog-post-{i}.jpg" for i in range(1, 8)]
 # Unsplash 下载图存放目录和命名前缀
 IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
-# 模型降级列表：主模型配额耗尽时自动尝试下一个
+# 模型降级列表：主模型配额耗尽/过载时自动尝试下一个
+# 注意：gemini-2.0-* 系列已下线(404)，统一用现行 2.5 系列。
 GENERATOR_MODELS = [
-    "gemini-2.5-flash",       # 最新最强，优先使用
-    "gemini-2.0-flash",       # 降级一档
-    "gemini-2.0-flash-lite",  # 最后兜底
+    "gemini-2.5-flash",       # 技术教程主力
+    "gemini-2.5-flash-lite",  # 兜底
 ]
 GENERATOR_MODEL = GENERATOR_MODELS[0]  # 默认主模型（日志显示用）
 MAX_REVIEW_RETRIES = 2   # 审核不通过最多重写几次
+
+
+def buyer_guide_models():
+    """买家指南（money 页）的模型优先级：付费档可用 2.5-pro（质量挡）。
+    .env 设 GEMINI_USE_PRO=1 才把 pro 排在最前；否则用 flash（免费档 pro 配额=0）。
+    pro 若 429 会自动回落到 flash，所以设了也安全。"""
+    models = []
+    if os.environ.get("GEMINI_USE_PRO") == "1":
+        models.append("gemini-2.5-pro")
+    models += ["gemini-2.5-flash", "gemini-2.5-flash-lite"]
+    return models
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -335,9 +346,13 @@ the document outline must have proper H2 top-level sections. Do NOT skip from H2
 8. ## Final recommendation — a clear recommendation + internal links to related articles (see below)
 Keep the keyword phrasing natural — do NOT repeat the exact primary keyword more than 3-4 times in the whole article.
 
+VERIFIED FACTS (ground truth from live web search — use THESE for all product names, pricing, and ratings.
+Do NOT contradict them and do NOT invent numbers beyond them. If a detail isn't here, keep it qualitative):
+{research_brief}
+
 ACCURACY GUARDRAILS (violating these fails review):
-- Only mention REAL, currently-existing LMS products. Do NOT invent products or features.
-- Do NOT fabricate specific prices, exact user counts, or made-up statistics. For pricing, describe the MODEL and say readers should verify current pricing on the vendor site.
+- Build the article around the REAL products in VERIFIED FACTS above. Do NOT invent products or features.
+- Use the real pricing/ratings from VERIFIED FACTS. Where a number isn't given, describe the pricing MODEL qualitatively and tell readers to verify on the vendor site. Do NOT fabricate prices, user counts, or statistics.
 - Do NOT invent fake customer testimonials or review quotes.
 - Present balanced pros AND cons for every product — a list of only-positives reads as sponsored and fails.
 
@@ -505,6 +520,58 @@ def _download_unsplash(slug, access_key):
         return _fallback_image(slug), None
 
 
+def gather_research_brief(genai, title, keywords):
+    """A+B：带 Google Search grounding 的 Gemini 调用，收集真实可引用的事实
+    （真实产品 / 定价模型与起价 / G2 评分 / 优缺点 + 来源域名）作为写作的事实底座。
+    既增加第一页没有的独特价值，又从源头杜绝编造。失败时返回空串，绝不阻断流水线。"""
+    try:
+        from google.genai import types
+    except Exception as e:
+        print(f"[Research] 无法导入 grounding 类型（{e}），跳过事实简报")
+        return ""
+
+    query = f"""Research REAL, current ({datetime.now().year}) facts for an article titled "{title}"
+(target keywords: {keywords}). List 5-7 real, well-known LMS products genuinely relevant to this topic.
+For EACH product give a compact bullet:
+- Product name
+- Pricing model + real starting price if publicly known (otherwise 'quote-based')
+- G2 or Capterra rating if known (e.g. 4.6/5)
+- 2 standout strengths for THIS specific use case
+- 1 real, commonly-reported weakness
+Only include facts you can support from search results. Be concise — bullets, no marketing fluff.
+End with a line 'SOURCES:' listing the source domains used."""
+
+    cfg = types.GenerateContentConfig(
+        tools=[types.Tool(google_search=types.GoogleSearch())]
+    )
+    for model_name in ("gemini-2.5-flash", "gemini-2.5-flash-lite"):
+        try:
+            r = genai.models.generate_content(model=model_name, contents=query, config=cfg)
+            brief = (r.text or "").strip()
+            if brief:
+                # 统计实际检索来源数（仅日志用）
+                src = 0
+                try:
+                    gm = r.candidates[0].grounding_metadata
+                    src = len(gm.grounding_chunks) if (gm and gm.grounding_chunks) else 0
+                except Exception:
+                    pass
+                print(f"[Research] ✅ grounded 事实简报已获取（{model_name}，{len(brief.split())} 词，{src} 个真实来源）")
+                return brief
+        except Exception as e:
+            err = str(e)
+            transient = any(t in err for t in
+                            ("429", "RESOURCE_EXHAUSTED", "503", "UNAVAILABLE", "overloaded", "high demand"))
+            if transient:
+                print(f"[Research] ⚠ {model_name} grounding 暂时不可用（配额/过载），降级…")
+                time.sleep(3)
+                continue
+            print(f"[Research] grounding 失败（{e}），跳过事实简报")
+            return ""
+    print("[Research] ⚠ grounding 全部受限，无事实简报（文章将保持定性描述）")
+    return ""
+
+
 def generate_article(genai, title, keywords, slug, existing_articles, review_feedback=""):
     """调用 Gemini 生成文章，支持注入审核反馈进行重写"""
     model = None  # 新版 SDK 直接通过 client.models.generate_content 调用
@@ -517,9 +584,18 @@ def generate_article(genai, title, keywords, slug, existing_articles, review_fee
     # 描述占位（由生成模型填写）
     # description 由 Gemini 自行生成（见 prompt 中的指令）
 
-    # 按选题类型选择 prompt：买家指南(对比/榜单) vs 技术教程
-    prompt_template = BUYER_GUIDE_PROMPT if is_buyer_guide(title, keywords) else ARTICLE_PROMPT
-    print(f"[Generator] 文章类型: {'买家指南/对比' if prompt_template is BUYER_GUIDE_PROMPT else '技术教程'}")
+    # 按选题类型选择 prompt 与模型：买家指南(对比/榜单) vs 技术教程
+    buyer = is_buyer_guide(title, keywords)
+    prompt_template = BUYER_GUIDE_PROMPT if buyer else ARTICLE_PROMPT
+    models = buyer_guide_models() if buyer else GENERATOR_MODELS
+    print(f"[Generator] 文章类型: {'买家指南/对比' if buyer else '技术教程'}")
+
+    # A+B：买家指南先用 grounding 采集真实事实，注入写作 prompt
+    research_brief = ""
+    if buyer:
+        research_brief = gather_research_brief(genai, title, keywords)
+    brief_block = research_brief if research_brief else \
+        "(No verified external facts retrieved — keep ALL pricing and specifics qualitative; do NOT invent numbers.)"
 
     prompt = prompt_template.format(
         title=title,
@@ -528,7 +604,7 @@ def generate_article(genai, title, keywords, slug, existing_articles, review_fee
         date=date_str,
         categories=json.dumps(categories),
         tags=json.dumps(tags),
-
+        research_brief=brief_block,
         internal_links=internal_links
     )
 
@@ -544,7 +620,7 @@ Apply ALL of the above improvements. The reviewer is strict — a generic rewrit
 
     print(f"[Generator] 调用 Gemini 生成文章...")
 
-    for model_name in GENERATOR_MODELS:
+    for model_name in models:
         print(f"[Generator] 尝试模型: {model_name}")
         try:
             response = genai.models.generate_content(
@@ -558,15 +634,18 @@ Apply ALL of the above improvements. The reviewer is strict — a generic rewrit
             return content.strip()
         except Exception as e:
             err = str(e)
-            if "429" in err or "RESOURCE_EXHAUSTED" in err:
-                print(f"[Generator] ⚠ {model_name} 配额耗尽，尝试下一个模型...")
+            # 可重试的瞬时错误：配额(429) + 服务端过载(503/UNAVAILABLE) → 自动降级到下一个模型
+            transient = any(t in err for t in
+                            ("429", "RESOURCE_EXHAUSTED", "503", "UNAVAILABLE", "overloaded", "high demand"))
+            if transient:
+                print(f"[Generator] ⚠ {model_name} 暂时不可用（配额/过载），降级到下一个模型...")
                 time.sleep(5)
                 continue
             else:
                 print(f"[Generator] ❌ {model_name} 生成失败: {e}")
                 return None
 
-    print("[Generator] ❌ 所有模型均配额耗尽，请稍后再试。")
+    print("[Generator] ❌ 所有模型均不可用（配额耗尽或服务端过载），请稍后再试。")
     return None
 
 

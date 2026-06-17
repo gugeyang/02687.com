@@ -21,6 +21,10 @@ The 02687.com knowledge base is organized across four technical domains:
 - **Security & Identity**: SAML 2.0 SSO integration with Azure AD for Moodle, Keycloak campus-wide identity federation, certificate management, and IAM hardening for educational platforms.
 - **Developer Logs**: Hands-on Python automation scripts for Canvas LMS REST APIs, serverless plagiarism detection pipelines on AWS Lambda, containerized auto-grading systems, and Prometheus + Grafana monitoring stacks tuned for LMS workloads.
 
+### LMS Buyer's Guides & Reviews
+
+Beyond infrastructure deep-dives, 02687.com publishes independent **LMS buyer's guides and platform comparisons** — for teams choosing a learning management system for corporate training, customer education, healthcare compliance, nonprofits, and higher education. These guides draw on the same hands-on deployment experience, combined with current vendor data and aggregated user ratings. We explain exactly how we score and compare platforms on our [review methodology page](/review-methodology/), and we do not take payment from vendors in exchange for favorable coverage.
+
 ### Who We Write For
 
 The primary audience of 02687.com includes university IT administrators managing campus LMS infrastructure, EdTech developers building integrations and automation workflows, and independent educators who prefer owning their infrastructure over paying per-seat SaaS licensing fees.
