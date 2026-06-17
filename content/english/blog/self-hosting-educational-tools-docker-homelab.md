@@ -16,7 +16,7 @@ I've spent years deploying massive infrastructure. Honestly, the barrier to entr
 
 ## Why Self-Host in EdTech?
 
-I initially thought managing a self-hosted LMS (Learning Management System) would be a maintenance nightmare because of database migrations and PHP dependencies. But it failed horribly *only* when I tried to install everything directly on a Linux VM. Once you wrap these services in Docker, the paradigm shifts entirely.
+I initially thought managing a self-hosted LMS (Learning Management System) would be a maintenance nightmare because of database migrations and PHP dependencies. But it failed horribly *only* when I tried to install everything directly on a Linux VM. Once you wrap these services in Docker, the paradigm shifts entirely. (If you're still deciding *which* platform to self-host, start with my comparison of the [best self-hosted, on-premise LMS options](/blog/best-self-hosted-lms-open-source-platforms-compared/).)
 
 1. **Absolute Data Control:** Student analytics, gradebooks, and forum discussions stay on your disks.
 2. **Cost Efficiency:** A $40/month bare-metal server can easily handle 500+ concurrent students if configured with proper caching (Redis/Memcached), whereas SaaS LMS solutions charge astronomical per-user licensing fees.

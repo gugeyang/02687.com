@@ -59,4 +59,4 @@ For the vast majority of institutions considering self-hosting an LMS:
 
 The "free open source" label on Canvas's GitHub repo is technically accurate. But free-as-in-beer and free-as-in-you-can-actually-operate-this-sustainably are different things.
 
-For a detailed walkthrough of getting a production-ready Moodle environment up, including Redis configuration and SSL setup, see our [Installing Moodle on Ubuntu 22.04 with Docker Compose](/blog/installing-moodle-ubuntu-22-04-docker-compose/) guide.
+Moodle and Canvas aren't your only options, either. If you want to weigh them against Open edX, Chamilo, and Sakai before committing, see our full comparison of the [best self-hosted, on-premise LMS platforms](/blog/best-self-hosted-lms-open-source-platforms-compared/). And for a detailed walkthrough of getting a production-ready Moodle environment up, including Redis configuration and SSL setup, see our [Installing Moodle on Ubuntu 22.04 with Docker Compose](/blog/installing-moodle-ubuntu-22-04-docker-compose/) guide.
