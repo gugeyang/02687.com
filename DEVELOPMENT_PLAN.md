@@ -362,18 +362,38 @@ git push
 
 | 优先级 | 建议文章标题 | 核心长尾词 | 月搜索量 / CPC | 状态 |
 |--------|------------|-----------|------------|------|
-| 🔴 P1 | Best Self-Hosted LMS: Open-Source Platforms Compared | best self hosted lms, open source lms, open learning management system | 1K-10K / $30-59 | ⬜ 待写 |
-| 🔴 P1 | Best LMS for Customer Training (2026) | customer training lms, best lms for customer training, customer lms | 100-1K / $254-269 | ⬜ 待写 |
-| 🔴 P1 | Best Enterprise LMS for Corporate Training | best enterprise lms, lms for corporate training, corporate lms | 100-1K / $93-230 | ⬜ 待写 |
-| 🔴 P1 | Cloud-Based LMS: The Complete Buyer's Guide | cloud based lms, cloud lms, hosted lms | 10K-100K / $86-108 | ⬜ 待写 |
-| 🟡 P2 | Best LMS for Healthcare & Compliance Training | healthcare lms, lms compliance training, compliance lms | 100-1K / $116-159 | ⬜ 待写 |
-| 🟡 P2 | Best LMS for Nonprofits | lms for nonprofits, best lms for nonprofits | 100-1K / $155-187 | ⬜ 待写 |
-| 🟡 P2 | Best LMS for Retail, Restaurants & Hospitality | lms for retail, best lms for restaurants, hospitality lms | 100-1K / $100-450 | ⬜ 待写 |
-| 🟡 P2 | What Is a SCORM-Compliant LMS? (+ Best Options) | scorm compliant lms, scorm lms | 100-1K / $68-124 | ⬜ 待写 |
-| 🟢 P3 | White Label LMS Platforms Compared | white label lms, white label e learning platform | 100-1K / $123-128 | ⬜ 待写 |
-| 🟢 P3 | Gamified LMS: Best Platforms for Engagement | gamified lms, gamified learning management system | 100-1K / $124 | ⬜ 待写 |
-| 🟢 P3 | How Much Does an LMS Cost? Pricing Guide 2026 | lms cost, learning management system cost | 100-1K / $59-71 | ⬜ 待写 |
-| 🟢 P3 | Best Free LMS Platforms (2026) | free online lms, free lms online | 100-1K / $70 | ⬜ 待写 |
+| 🔴 P1 | Best Self-Hosted LMS: Open-Source Platforms Compared | best self hosted lms, open source lms, open learning management system | 1K-10K / $30-59 | ✅ 已发布 |
+| 🔴 P1 | Best LMS for Customer Training (2026) | customer training lms, best lms for customer training, customer lms | 100-1K / $254-269 | ✅ 已发布 |
+| 🔴 P1 | Best Enterprise LMS for Corporate Training | best enterprise lms, lms for corporate training, corporate lms | 100-1K / $93-230 | ✅ 已发布 |
+| 🔴 P1 | Cloud-Based LMS: The Complete Buyer's Guide | cloud based lms, cloud lms, hosted lms | 10K-100K / $86-108 | ✅ 已发布 |
+| 🟡 P2 | Best LMS for Healthcare & Compliance Training | healthcare lms, lms compliance training, compliance lms | 100-1K / $116-159 | ✅ 已发布 |
+| 🟡 P2 | Best LMS for Nonprofits | lms for nonprofits, best lms for nonprofits | 100-1K / $155-187 | ✅ 已发布 |
+| 🟡 P2 | Best LMS for Retail, Restaurants & Hospitality | lms for retail, best lms for restaurants, hospitality lms | 100-1K / $100-450 | ✅ 已发布 |
+| 🟡 P2 | What Is a SCORM-Compliant LMS? (+ Best Options) | scorm compliant lms, scorm lms | 100-1K / $68-124 | ✅ 已发布 |
+| 🟢 P3 | White Label LMS Platforms Compared | white label lms, white label e learning platform | 100-1K / $123-128 | ✅ 已发布 |
+| 🟢 P3 | Gamified LMS: Best Platforms for Engagement | gamified lms, gamified learning management system | 100-1K / $124 | ✅ 已发布 |
+| 🟢 P3 | How Much Does an LMS Cost? Pricing Guide 2026 | lms cost, learning management system cost | 100-1K / $59-71 | ✅ 已发布 |
+| 🟢 P3 | Best Free LMS Platforms (2026) | free online lms, free lms online | 100-1K / $70 | ✅ 已发布 |
+
+### 6.2 高 CPC 买家意图选题 · 第二批（真实 Keyword Planner 数据 2026-07-10）
+
+> 数据来源：Google Keyword Planner（地区 US，4427 词导出，筛出 730 个 ≥$30 出价 + 非 HIGH 竞争的夹缝词）。
+> 与 6.1 不重叠。新挖出的高价簇：员工入职软件、合规/安全培训、员工培训、中小企业/销售/制造业 LMS。品牌评测词（docebo/workramp/absorb）本批暂不碰。
+
+| 优先级 | 建议文章标题 | 核心长尾词 | 月搜索量 / CPC | 状态 |
+|--------|------------|-----------|------------|------|
+| 🔴 P1 | Best Employee Onboarding Software (2026) | employee onboarding software, automated onboarding software, new hire onboarding software, hr onboarding systems | 500-5K / $105-297 | ✅ 已发布 |
+| 🔴 P1 | Best Compliance Training LMS for Regulated Industries | compliance learning management system, compliance training platform, regulatory training lms | 100-1K / $100-370 | ⬜ 待写 |
+| 🔴 P1 | Best LMS for Employee Training | employee training software, employee lms, learning management system for employee training, online staff training software | 500-5K / $105-180 | ⬜ 待写 |
+| 🔴 P1 | Best LMS for Small Business | best lms for small business, best online lms, best learning management system for small business | 100-1K / $160-183 | ⬜ 待写 |
+| 🔴 P1 | Best Sales Training LMS & Platforms | sales training platform, sales learning management system | 100-500 / $138-158 | ⬜ 待写 |
+| 🟡 P2 | Best Safety Training Software | safety training software, online safety training platforms | 100-1K / $153-165 | ⬜ 待写 |
+| 🟡 P2 | Best Customer Onboarding Software | customer onboarding software, customer onboarding platform, customer onboarding tools | 100-1K / $84-118 | ⬜ 待写 |
+| 🟡 P2 | Best LMS for Manufacturing | manufacturing learning management system, manufacturing lms | 100-1K / $141 | ⬜ 待写 |
+| 🟡 P2 | Blended Learning LMS: Best Platforms Compared | blended learning lms, blended learning platform | 100-1K / $194 | ⬜ 待写 |
+| 🟢 P3 | Best Microlearning Platforms (2026) | micro learning platforms, microlearning platform | 100-1K / $92 | ⬜ 待写 |
+| 🟢 P3 | Best Corporate Learning & Development Platforms | learning and development platforms, corporate learning platforms | 500-1K / $115-175 | ⬜ 待写 |
+| 🟢 P3 | Best Training Management Software | training management software, employee training tracking software | 100-1K / $114-126 | ⬜ 待写 |
 
 **当前已覆盖的核心关键词（禁止重复）：**
 - Docker + Moodle 自建 LMS

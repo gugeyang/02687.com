@@ -683,7 +683,8 @@ def update_dev_plan_status(title):
         if in_section and line.startswith('|') and '⬜' in line:
             parts = [p.strip() for p in line.split('|')]
             if len(parts) >= 3 and parts[2] == title:
-                lines[i] = line.replace('⬜ 未写', '✅ 已发布')
+                # 状态单元格可能是 "⬜ 待写" 或旧版 "⬜ 未写"，统一回写为 ✅ 已发布
+                lines[i] = re.sub(r'⬜\s*\S+', '✅ 已发布', line)
                 DEV_PLAN.write_text(''.join(lines), encoding='utf-8')
                 print(f"[Plan] 第六节选题状态已回写: ⬜ → ✅")
                 return
