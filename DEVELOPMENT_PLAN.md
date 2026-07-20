@@ -384,7 +384,7 @@ git push
 |--------|------------|-----------|------------|------|
 | 🔴 P1 | Best Employee Onboarding Software (2026) | employee onboarding software, automated onboarding software, new hire onboarding software, hr onboarding systems | 500-5K / $105-297 | ✅ 已发布 |
 | 🔴 P1 | Best Compliance Training LMS for Regulated Industries | compliance learning management system, compliance training platform, regulatory training lms | 100-1K / $100-370 | ✅ 已发布 |
-| 🔴 P1 | Best LMS for Employee Training | employee training software, employee lms, learning management system for employee training, online staff training software | 500-5K / $105-180 | ⬜ 待写 |
+| 🔴 P1 | Best LMS for Employee Training | employee training software, employee lms, learning management system for employee training, online staff training software | 500-5K / $105-180 | ✅ 已发布 |
 | 🔴 P1 | Best LMS for Small Business | best lms for small business, best online lms, best learning management system for small business | 100-1K / $160-183 | ⬜ 待写 |
 | 🔴 P1 | Best Sales Training LMS & Platforms | sales training platform, sales learning management system | 100-500 / $138-158 | ⬜ 待写 |
 | 🟡 P2 | Best Safety Training Software | safety training software, online safety training platforms | 100-1K / $153-165 | ⬜ 待写 |
