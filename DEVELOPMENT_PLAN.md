@@ -387,7 +387,7 @@ git push
 | 🔴 P1 | Best LMS for Employee Training | employee training software, employee lms, learning management system for employee training, online staff training software | 500-5K / $105-180 | ✅ 已发布 |
 | 🔴 P1 | Best LMS for Small Business | best lms for small business, best online lms, best learning management system for small business | 100-1K / $160-183 | ✅ 已发布 |
 | 🔴 P1 | Best Sales Training LMS & Platforms | sales training platform, sales learning management system | 100-500 / $138-158 | ✅ 已发布 |
-| 🟡 P2 | Best Safety Training Software | safety training software, online safety training platforms | 100-1K / $153-165 | ⬜ 待写 |
+| 🟡 P2 | Best Safety Training Software | safety training software, online safety training platforms | 100-1K / $153-165 | ✅ 已发布 |
 | 🟡 P2 | Best Customer Onboarding Software | customer onboarding software, customer onboarding platform, customer onboarding tools | 100-1K / $84-118 | ⬜ 待写 |
 | 🟡 P2 | Best LMS for Manufacturing | manufacturing learning management system, manufacturing lms | 100-1K / $141 | ⬜ 待写 |
 | 🟡 P2 | Blended Learning LMS: Best Platforms Compared | blended learning lms, blended learning platform | 100-1K / $194 | ⬜ 待写 |
