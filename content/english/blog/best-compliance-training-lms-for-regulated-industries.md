@@ -2,7 +2,7 @@
 title: "Best Compliance Training LMS for Regulated Industries"
 date: 2026-07-16T09:27:37+08:00
 image: "images/blog/blog-post-7.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS", "Compliance"]

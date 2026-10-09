@@ -2,7 +2,7 @@
 title: "GDPR Compliance in Moodle: Data Privacy Configuration"
 date: 2026-06-14T20:19:40+08:00
 image: "images/blog/blog-post-7.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Security", "Data and AI"]
 tags: ["Moodle"]

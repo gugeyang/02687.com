@@ -2,7 +2,7 @@
 title: "Moodle MariaDB Performance Tuning for 5,000 Concurrent Users"
 date: 2026-05-28T23:08:41+08:00
 image: "images/blog/blog-post-5.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Data and AI"]
 tags: ["Moodle", "MariaDB", "Performance"]

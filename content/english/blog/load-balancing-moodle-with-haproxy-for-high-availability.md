@@ -2,7 +2,7 @@
 title: "Load Balancing Moodle with HAProxy for High Availability"
 date: 2026-06-03T11:33:29+08:00
 image: "images/blog/blog-post-3.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Moodle"]

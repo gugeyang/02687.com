@@ -2,7 +2,7 @@
 title: "Troubleshooting Moodle Cron Jobs and Scheduled Tasks"
 date: 2026-06-11T11:38:47+08:00
 image: "images/blog/blog-post-6.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Moodle"]

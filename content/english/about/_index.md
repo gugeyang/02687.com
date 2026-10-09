@@ -3,14 +3,14 @@ title: "About Us"
 draft: false
 bg_image: "images/backgrounds/page-title.jpg"
 image: ""
-description: "02687.com is an open EdTech infrastructure platform documenting real-world deployments of Moodle, Docker, Knowledge Graphs, and serverless architectures for universities worldwide."
+description: "02687.com is an independent EdTech publication: LMS buyer's guides and comparisons, plus practical guides to self-hosted Moodle, Docker, and learning infrastructure."
 ---
 
 ## About 02687.com
 
-**02687.com** is an open EdTech infrastructure platform and practitioner knowledge base. We document real-world architectures, deployment strategies, and engineering decisions for building modern, self-hosted educational technology — from Moodle LMS deployments to serverless learning analytics pipelines.
+**02687.com** is an independent EdTech publication. We publish LMS buyer's guides and platform comparisons, plus practical guides to architectures, deployment strategies, and engineering decisions for self-hosted educational technology — from Moodle LMS deployments to learning analytics pipelines.
 
-We are a collective of EdTech architects, developers, and educators focused on a critical operational question: *How do universities and independent educators build resilient, cost-effective digital learning infrastructure without being locked into expensive SaaS monopolies?*
+The site is run by a small [editorial team](/author/02687-editorial-team/) focused on a practical question: *How do universities and independent educators build resilient, cost-effective digital learning infrastructure without being locked into expensive SaaS monopolies?*
 
 ### What the 02687 Platform Covers
 
@@ -23,13 +23,13 @@ The 02687.com knowledge base is organized across four technical domains:
 
 ### LMS Buyer's Guides & Reviews
 
-Beyond infrastructure deep-dives, 02687.com publishes independent **LMS buyer's guides and platform comparisons** — for teams choosing a learning management system for corporate training, customer education, healthcare compliance, nonprofits, and higher education. These guides draw on the same hands-on deployment experience, combined with current vendor data and aggregated user ratings. We explain exactly how we score and compare platforms on our [review methodology page](/review-methodology/), and we do not take payment from vendors in exchange for favorable coverage.
+Beyond infrastructure deep-dives, 02687.com publishes independent **LMS buyer's guides and platform comparisons** — for teams choosing a learning management system for corporate training, customer education, healthcare compliance, nonprofits, and higher education. These guides are built from vendor documentation and published pricing, aggregated user ratings, and community feedback. We explain exactly how we score and compare platforms on our [review methodology page](/review-methodology/), and we do not take payment from vendors in exchange for favorable coverage.
 
 ### Who We Write For
 
 The primary audience of 02687.com includes university IT administrators managing campus LMS infrastructure, EdTech developers building integrations and automation workflows, and independent educators who prefer owning their infrastructure over paying per-seat SaaS licensing fees.
 
-Every article published on 02687.com documents a configuration that has been deployed and tested in real environments, with the failure modes and trade-offs included alongside the working configurations.
+Our technical articles are based on official documentation, release notes, and known issues, and include the common failure modes and trade-offs alongside the working configurations. We use AI tools to help research and draft content, and we check each guide against its sources before publishing. If you spot an error, tell us and we'll fix it.
 
 ### Our Technical Philosophy
 

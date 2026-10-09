@@ -2,7 +2,7 @@
 title: "Using Prometheus and Grafana for LMS Performance Monitoring"
 date: "2024-05-11T10:00:00+08:00"
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Prometheus", "Grafana", "LMS", "Monitoring", "PromQL"]

@@ -2,7 +2,7 @@
 title: "Best Employee Onboarding Software (2026)"
 date: 2026-07-11T00:06:03+08:00
 image: "images/blog/blog-post-6.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["Moodle", "EdTech", "Infrastructure"]

@@ -2,7 +2,7 @@
 title: "How a Missing Redis Policy Took Down Moodle During Final Exams: A Post-Mortem"
 date: 2026-05-14T10:00:00+08:00
 image: "images/blog/blog-post-6.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Dev Log", "Infrastructure and Cloud"]
 tags: ["Moodle", "Redis", "Post-Mortem", "Incident Report", "Session Management"]

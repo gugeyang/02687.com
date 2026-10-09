@@ -2,7 +2,7 @@
 title: "Migrating Legacy SIS Data to PostgreSQL using Python"
 date: "2024-05-12T10:00:00+08:00"
 image: "images/blog/blog-post-3.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Data and AI", "Dev Log"]
 tags: ["PostgreSQL", "Python", "ETL", "Legacy SIS", "Data Migration"]

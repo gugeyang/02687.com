@@ -2,7 +2,7 @@
 title: "Building a Campus-Wide Single Sign-On (SSO) with Keycloak"
 date: "2024-05-13T10:00:00+08:00"
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Security", "Infrastructure and Cloud"]
 tags: ["Keycloak", "SSO", "IAM", "Nginx", "Active Directory"]

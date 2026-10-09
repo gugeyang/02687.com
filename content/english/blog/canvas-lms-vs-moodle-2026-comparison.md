@@ -2,7 +2,7 @@
 title: "Canvas LMS vs Moodle 2026: Technical Comparison for University IT Teams"
 date: 2026-05-11T00:00:00+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Canvas LMS", "Moodle", "LMS Comparison", "EdTech Infrastructure", "Self-Hosted"]

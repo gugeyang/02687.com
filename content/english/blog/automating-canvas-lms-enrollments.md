@@ -2,7 +2,7 @@
 title: "Automating Canvas LMS Enrollments Using Python and REST APIs"
 date: "2024-05-05T10:00:00+08:00"
 image: "images/blog/blog-post-3.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Dev Log", "Infrastructure and Cloud"]
 tags: ["Canvas LMS", "Python", "REST API", "Automation", "tenacity"]

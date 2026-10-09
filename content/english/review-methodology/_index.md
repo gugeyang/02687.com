@@ -3,7 +3,7 @@ title: "How We Evaluate LMS Platforms"
 draft: false
 bg_image: "images/backgrounds/page-title.jpg"
 image: ""
-description: "Our LMS review methodology: how 02687.com tests, scores, and compares learning management systems — the criteria, the data sources, and our independence policy."
+description: "Our LMS review methodology: how 02687.com researches, scores, and compares learning management systems — the criteria, the data sources, and our independence policy."
 ---
 
 ## How We Review and Compare LMS Platforms
@@ -12,7 +12,7 @@ Most "best LMS" lists online are affiliate pages ranked by who pays the highest 
 
 ### Our Evaluation Criteria
 
-Every learning management system we cover is assessed against the same seven criteria. These are the factors that, in our hands-on experience, actually determine whether a deployment succeeds or becomes a costly mistake:
+Every learning management system we cover is assessed against the same seven criteria. These are the factors that most often determine whether a deployment succeeds or becomes a costly mistake:
 
 1. **Fit for the stated use case** — A platform that is excellent for university teaching can be wrong for corporate compliance training. We score each tool against the *specific* scenario the guide is about, not in the abstract.
 2. **Total cost of ownership** — Beyond the sticker price: per-user scaling, implementation, hosting (for self-hosted options), customization, and ongoing maintenance.
@@ -24,9 +24,9 @@ Every learning management system we cover is assessed against the same seven cri
 
 ### Where Our Data Comes From
 
-Our reviews combine three sources, and we are explicit about which is which:
+Our reviews combine three kinds of sources, and we are explicit about which is which:
 
-- **Hands-on deployment experience.** Our team has deployed, migrated, and administered open-source and commercial LMS platforms in real production environments — including Moodle, Open edX, Canvas, Chamilo, and Sakai. Where we have run a platform ourselves, we say so.
+- **Official documentation.** Feature claims are checked against each vendor's own documentation, release notes, and (for open-source platforms like Moodle, Open edX, Canvas, and Chamilo) public code repositories and issue trackers. We do not claim to have deployed every platform we cover; where an opinion rests on documentation and user feedback rather than our own testing, we write it that way.
 - **Current vendor data.** Pricing models, plan tiers, and feature lists are checked against vendors' own published information at the time of writing. Pricing changes often — we date our guides and tell you to confirm current pricing on the vendor's site before buying.
 - **Aggregated user reviews.** We reference public ratings from platforms like G2 and Capterra to reflect the experience of a wider user base than any single team could represent.
 

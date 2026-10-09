@@ -2,7 +2,7 @@
 title: "Moodle Performance Tuning: PHP-FPM Workers, Redis Cache, and OPcache"
 date: 2026-05-05T10:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "PHP-FPM", "Redis", "OPcache", "Performance Tuning"]

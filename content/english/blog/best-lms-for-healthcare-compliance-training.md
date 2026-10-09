@@ -2,7 +2,7 @@
 title: "Best LMS for Healthcare & Compliance Training"
 date: 2026-06-21T12:24:19+08:00
 image: "images/blog/blog-post-5.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS", "Compliance"]

@@ -2,7 +2,7 @@
 title: "Moodle Security Hardening Checklist for Production Servers"
 date: 2026-06-02T16:02:53+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Security"]
 tags: ["Moodle"]

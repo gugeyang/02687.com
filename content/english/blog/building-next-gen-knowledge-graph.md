@@ -2,7 +2,7 @@
 title: "Building the Next-Gen Knowledge Graph for Modern Universities"
 date: 2024-05-04T09:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Data and AI", "Dev Log"]
 tags: ["Knowledge Graph", "Neo4j", "Python", "Curriculum Mapping", "Graph Database"]

@@ -2,7 +2,7 @@
 title: "What Is a SCORM-Compliant LMS? (+ Best Options)"
 date: 2026-06-29T09:01:51+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS", "SCORM"]

@@ -2,7 +2,7 @@
 title: "Configuring Moodle SMTP Email with SPF and DKIM to Avoid Spam"
 date: 2026-06-02T23:05:21+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Moodle"]

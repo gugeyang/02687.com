@@ -2,7 +2,7 @@
 title: "Securing Moodle with HTTPS: Nginx Reverse Proxy and Let's Encrypt SSL Setup"
 date: 2026-05-16T10:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Moodle", "Nginx", "SSL", "Let's Encrypt", "HTTPS", "Docker"]

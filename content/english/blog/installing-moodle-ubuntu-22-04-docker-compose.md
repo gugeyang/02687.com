@@ -2,7 +2,7 @@
 title: "Installing Moodle on Ubuntu 22.04 with Docker Compose: Step-by-Step Guide"
 date: 2026-05-05T14:00:00+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "Docker Compose", "Ubuntu 22.04", "MariaDB", "Nginx"]

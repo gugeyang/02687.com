@@ -2,7 +2,7 @@
 title: "Best LMS for Customer Training (2026)"
 date: 2026-06-17T08:30:37+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS"]

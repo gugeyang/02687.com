@@ -2,7 +2,7 @@
 title: "How Much Does an LMS Cost? Pricing Guide 2026"
 date: 2026-07-05T11:22:59+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS"]

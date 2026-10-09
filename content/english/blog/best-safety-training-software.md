@@ -2,7 +2,7 @@
 title: "Best Safety Training Software"
 date: 2026-07-30T19:16:35+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["Moodle", "EdTech", "Infrastructure"]

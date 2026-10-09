@@ -2,7 +2,7 @@
 title: "Open Source LMS Comparison 2026: Moodle vs Open edX vs Canvas vs Chamilo"
 date: 2026-05-23T10:00:00+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "Open edX", "Canvas LMS", "Chamilo", "LMS Comparison", "Self-Hosted"]

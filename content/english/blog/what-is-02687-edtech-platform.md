@@ -2,7 +2,7 @@
 title: "What is 02687.com? The Open EdTech Infrastructure Platform"
 date: 2026-05-06T20:00:00+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["02687", "EdTech Platform", "Open Source LMS", "Moodle", "Self-Hosted"]

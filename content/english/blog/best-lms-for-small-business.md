@@ -2,7 +2,7 @@
 title: "Best LMS for Small Business"
 date: 2026-07-22T10:59:20+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS"]

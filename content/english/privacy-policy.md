@@ -1,26 +1,58 @@
 ---
 title: "Privacy Policy"
 date: 2024-01-01
+lastmod: 2026-10-09
 type: "page"
 ---
 
-At 02687.com, the privacy of our visitors is of extreme importance to us. This privacy policy document outlines the types of personal information is received and collected by 02687.com and how it is used.
+*Last updated: October 9, 2026*
 
-### Log Files
-Like many other Web sites, 02687.com makes use of log files. The information inside the log files includes internet protocol (IP) addresses, type of browser, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and number of clicks to analyze trends, administer the site, track user’s movement around the site, and gather demographic information. IP addresses, and other such information are not linked to any information that is personally identifiable.
+This Privacy Policy explains what information 02687.com ("we", "us") collects when you visit this website, how it is used, and the choices you have.
 
-### Cookies and Web Beacons
-02687.com does use cookies to store information about visitors preferences, record user-specific information on which pages the user access or visit, customize Web page content based on visitors browser type or other information that the visitor sends via their browser.
+### Information We Collect
 
-### Google AdSense and the DoubleClick DART Cookie
-* Google, as a third party vendor, uses cookies to serve ads on 02687.com.
-* Google's use of the DART cookie enables it to serve ads to users based on their visit to 02687.com and other sites on the Internet.
-* Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL - http://www.google.com/privacy_ads.html
+We do not require you to create an account, and we do not ask for personal information to read our content. If you email us, we receive your email address and whatever you include in your message, and we use it only to reply.
 
-These third-party ad servers or ad networks use technology to the advertisements and links that appear on 02687.com send directly to your browsers. They automatically receive your IP address when this occurs. Other technologies (such as cookies, JavaScript, or Web Beacons) may also be used by the third-party ad networks to measure the effectiveness of their advertisements and / or to personalize the advertising content that you see.
+Like most websites, our hosting provider and analytics tools automatically collect technical information such as your IP address, browser type, device type, referring page, pages visited, and the date and time of your visit.
 
-02687.com has no access to or control over these cookies that are used by third-party advertisers.
+### Google Analytics
 
-You should consult the respective privacy policies of these third-party ad servers for more detailed information on their practices as well as for instructions about how to opt-out of certain practices. 02687.com's privacy policy does not apply to, and we cannot control the activities of, such other advertisers or web sites.
+We use Google Analytics 4 to understand how visitors use the site (for example, which articles are read most). Google Analytics uses cookies and similar technologies to collect usage data. You can learn how Google uses this data at [How Google uses information from sites or apps that use our services](https://policies.google.com/technologies/partner-sites), and you can opt out with the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout).
 
-If you wish to disable cookies, you may do so through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites.
+### Advertising (Google AdSense)
+
+We use Google AdSense to display advertisements on this site.
+
+- Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.
+- Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to this site and/or other sites on the Internet.
+- You may opt out of personalized advertising by visiting [Google Ads Settings](https://adssettings.google.com). You can also opt out of some third-party vendors' use of cookies for personalized advertising at [www.aboutads.info](https://www.aboutads.info/choices/).
+
+For more information, see Google's [Advertising policies](https://policies.google.com/technologies/ads).
+
+### Cookies
+
+Cookies are small text files stored on your device. Besides the analytics and advertising cookies described above, this site does not set its own tracking cookies. You can block or delete cookies through your browser settings; the site will still work, but ads may be less relevant.
+
+### Visitors in the EEA, UK, and Switzerland
+
+Where required by law, visitors from the European Economic Area, the United Kingdom, and Switzerland are asked for consent before personalized advertising cookies are used, through a Google-certified consent management message. You can change your choices at any time using the privacy settings link shown on the site.
+
+### Your Rights
+
+Depending on where you live (for example under the GDPR or the California Consumer Privacy Act), you may have the right to access, correct, or delete personal information about you, and to opt out of the "sale" or "sharing" of personal information for targeted advertising. Because we don't collect personal information directly, most of these requests are best handled through the Google tools linked above. You can also contact us and we will help.
+
+### Children's Information
+
+This site is not directed at children under 13, and we do not knowingly collect personal information from children.
+
+### External Links
+
+Our articles link to vendor websites and other third-party sites. We are not responsible for the privacy practices of those sites.
+
+### Changes to This Policy
+
+We may update this policy from time to time. The "Last updated" date above shows when it was last changed.
+
+### Contact
+
+Questions about this policy: **admin@02687.com**

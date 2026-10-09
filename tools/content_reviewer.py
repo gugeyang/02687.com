@@ -25,7 +25,11 @@ PASS_SCORE = 75
 FORBIDDEN_PATTERNS = [
     (r'[\u4e00-\u9fff]',                   "包含中文字符"),
     (r'<!-- ADSENSE_INSERT_HERE -->',       "包含 ADSENSE 占位符（HCU 风险）"),
-    (r'author:\s*"EdTech Architect"',      "author 字段错误（应为 Alex Chen）"),
+    (r'author:\s*"(?!02687 Editorial Team")', "author 字段错误（应为 02687 Editorial Team）"),
+    (r"(?i)\b(I've|I have|I) (spent|deployed|led|migrated|run|ran|managed) [^.\n]{0,60}\b(years|clients?|institutions?|universit)",
+                                           "编造的个人经历（虚构作者经验，AdSense/E-E-A-T 风险）"),
+    (r'(?i)\b(my|our) clients?\b|\bin my \d+ years\b|\b\d+ years of (hands-on )?experience\b',
+                                           "编造的客户/从业年限（虚构作者经验）"),
     (r'Lorem ipsum',                       "包含 Lorem Ipsum 占位文字"),
     (r'John Doe',                          "包含违规人名 John Doe"),
 ]
@@ -47,13 +51,16 @@ EVALUATION CRITERIA — Score each dimension and be CRITICAL. Your job is to fin
    Deduct points for: generic openers ("In today's digital era", "In the ever-evolving landscape"),
    wishy-washy conclusions ("it depends on your use case" without specifics), overly balanced
    perspectives with no clear stance, formulaic sentence structures repeated throughout.
-   Full score = reads like a practitioner sharing real experience, not an AI summarizing a topic.
+   Full score = reads like a knowledgeable editor giving specific advice, not an AI summarizing a topic.
 
-2. E-E-A-T EXPERIENCE SIGNALS (0-25 pts)
-   Deduct points if: no first-person experience ("I've seen", "I spent X hours debugging"),
-   no specific failure scenarios with real error messages or log output, no concrete numbers
-   (time spent, user counts, memory sizes), no admission of mistakes or wrong assumptions.
-   Full score = reader believes a real person with real scars wrote this.
+2. E-E-A-T / TRUSTWORTHINESS (0-25 pts)
+   The author is an editorial team that researches from docs and public sources; it has NOT
+   personally run deployments for clients. HEAVILY deduct (score this dimension 0-5) for ANY
+   fabricated first-hand experience: "I spent X hours", "when I deployed this for a client",
+   "in my N years", invented institutions/clients/anecdotes.
+   Also deduct if: no specific failure modes with real error messages, no documented numbers
+   (defaults, requirements, limits), no grounding in official docs or known issues.
+   Full score = specific, verifiable, honest expertise with zero invented personal claims.
 
 3. GOOGLE HCU COMPLIANCE (0-20 pts)
    Deduct points if: the article is "about" the topic rather than solving the specific search intent,
@@ -115,12 +122,15 @@ EVALUATION CRITERIA — Score each dimension and be CRITICAL. Your job is to fin
 1. DE-AI-IZATION (0-20 pts)
    Deduct for: generic openers, formulaic structure, only-positive product descriptions that read
    as sponsored, vague "it depends" endings with no real recommendation.
-   Full score = reads like a real consultant giving honest, opinionated buying advice.
+   Full score = reads like an honest, opinionated editor giving specific buying advice.
 
-2. FIRST-HAND EVALUATION SIGNALS / E-E-A-T (0-20 pts)
-   Deduct if: no first-person evaluation experience ("when I deployed X for a client", "I'd avoid Y because"),
-   no specific scenarios, no sense the author actually used these products.
-   Full score = reader believes a real practitioner who has used these tools wrote this.
+2. TRUSTWORTHINESS / E-E-A-T (0-20 pts)
+   The author is an editorial team that researches from vendor docs, pricing pages, and public
+   user reviews; it has NOT personally deployed these products for clients. HEAVILY deduct
+   (score this dimension 0-4) for ANY fabricated first-hand experience: "when I deployed X for a
+   client", "I've run these in production", "in my N years", invented clients or anecdotes.
+   Also deduct if: opinions aren't backed by documented features, pricing models, or review patterns.
+   Full score = specific, well-reasoned, honest analysis with zero invented personal claims.
 
 3. BUYER-INTENT SATISFACTION / HCU (0-20 pts)
    Deduct if: a reader searching "{keyword}" still wouldn't know which to choose after reading,

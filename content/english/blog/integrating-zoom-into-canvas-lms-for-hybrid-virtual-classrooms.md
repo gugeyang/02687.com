@@ -2,7 +2,7 @@
 title: "Integrating Zoom into Canvas LMS for Hybrid Virtual Classrooms"
 date: 2026-05-23T21:08:28+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Canvas", "Zoom", "LMS"]

@@ -2,7 +2,7 @@
 title: "Best LMS for Employee Training"
 date: 2026-07-20T11:38:00+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS"]

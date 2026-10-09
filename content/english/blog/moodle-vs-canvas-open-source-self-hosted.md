@@ -2,7 +2,7 @@
 title: "Moodle vs Canvas Open Source: Which LMS Should You Actually Self-Host?"
 date: 2026-05-07T10:00:00+08:00
 image: "images/blog/blog-post-5.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle", "Canvas LMS", "LMS Comparison", "Self-Hosting", "Open Source"]

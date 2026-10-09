@@ -2,7 +2,7 @@
 title: "Best Self-Hosted LMS (2026): On-Premise & Open-Source Platforms Compared"
 date: 2026-06-17T00:29:23+08:00
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS", "Self-Hosted", "On-Premise", "Open Source"]

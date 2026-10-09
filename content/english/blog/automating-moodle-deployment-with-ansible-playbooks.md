@@ -2,7 +2,7 @@
 title: "Automating Moodle Deployment with Ansible Playbooks"
 date: 2026-06-08T12:22:07+08:00
 image: "images/blog/blog-post-5.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud", "Dev Log"]
 tags: ["Moodle"]

@@ -25,7 +25,7 @@ echo   Skip review    = add  --skip-review
 echo ============================================================
 echo.
 
-"%PY%" tools\auto_publish.py %*
+"%PY%" -W ignore::FutureWarning tools\auto_publish.py %*
 
 echo.
 echo ============================================================

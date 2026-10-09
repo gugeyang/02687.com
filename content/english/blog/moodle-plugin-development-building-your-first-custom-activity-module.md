@@ -2,7 +2,7 @@
 title: "Moodle Plugin Development: Building Your First Custom Activity Module"
 date: 2026-05-25T23:44:35+08:00
 image: "images/blog/blog-post-3.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Dev Log"]
 tags: ["Moodle"]

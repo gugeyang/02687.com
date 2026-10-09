@@ -250,26 +250,29 @@ At least 2 of these links MUST appear within the body text of the article, embed
 # 文章生成模块
 # ═══════════════════════════════════════════════════════════════════════════════
 
-ARTICLE_PROMPT = """You are Alex Chen, a senior EdTech infrastructure architect with 9 years of experience
-deploying learning management systems at universities across Asia-Pacific. You have personally
-deployed Moodle, Canvas, Open edX, and Nextcloud in production environments.
+ARTICLE_PROMPT = """You are writing for the 02687 Editorial Team, a small team that researches and documents
+self-hosted EdTech infrastructure (Moodle, Canvas, Open edX, Nextcloud) using official documentation,
+issue trackers, release notes, and community forums.
 
 Write a comprehensive, deeply technical blog post for the 02687.com website targeting the topic: "{title}"
 Primary keywords to optimize for: {keywords}
 
-AUTHOR VOICE REQUIREMENTS (critical — this determines E-E-A-T score):
-- Write in first person. Use "I", "I've seen", "I spent X hours debugging this"
-- Include at least one specific failure you encountered and how you diagnosed it
-- Include at least one thing you wish someone had told you before starting
+AUTHOR VOICE REQUIREMENTS (critical — honesty is non-negotiable):
+- Write as an editorial team ("we recommend", "our take") or address the reader directly ("you'll want to").
+- NEVER invent personal experience: no "I spent X hours", "when I deployed this for a client",
+  "in my 9 years", no fictional anecdotes, clients, institutions, or war stories.
+- Ground practical advice in verifiable sources: official docs, known bugs/issue trackers,
+  documented defaults and limits. Phrase common failures as "a frequently reported issue is..."
+- Include at least one common failure mode, how to diagnose it, and the fix
 - Take clear stances — avoid "it depends" without a specific recommendation
-- Use specific numbers: memory sizes, user counts, response times, hours spent
+- Use specific numbers only when they are documented defaults/requirements, or clearly labelled examples
 
 MANDATORY FRONT MATTER (copy exactly, fill in the blanks):
 ---
 title: "{title}"
 date: {date}
 image: "images/blog/{slug}.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: {categories}
 tags: {tags}
@@ -302,11 +305,10 @@ Output the article starting directly with ---, no markdown wrapper around it.
 # 这类文章面向"想选购 LMS 的买家"，形态是榜单/对比/选型指南，而非命令行教程。
 # 广告主在这类页面出价高（$50–450 页首出价），但内容形态完全不同：
 # 不要代码块/Gotchas，要真实产品对比表、优缺点、按场景推荐、FAQ。
-BUYER_GUIDE_PROMPT = """You are Alex Chen, an independent EdTech consultant with 9 years of experience.
-You have personally deployed, migrated, and EVALUATED dozens of learning management systems
-(Moodle, Canvas, Open edX, TalentLMS, Docebo, LearnUpon, Absorb, iSpring, Litmos, and more)
-for universities, corporate training teams, and nonprofits across Asia-Pacific. You help
-organizations CHOOSE the right LMS, so you have hands-on opinions about which tools fit which use case.
+BUYER_GUIDE_PROMPT = """You are writing for the 02687 Editorial Team, an independent team that researches and
+compares learning management systems using vendor documentation, published pricing, public
+user reviews (G2, Capterra), and community discussions. The team helps organizations CHOOSE the
+right LMS, so you give clear, well-reasoned opinions about which tools fit which use case.
 
 Write a comprehensive, genuinely useful LMS buyer's guide for the 02687.com website on: "{title}"
 Primary keywords to optimize for: {keywords}
@@ -314,9 +316,12 @@ Primary keywords to optimize for: {keywords}
 This is a BUYER'S GUIDE / COMPARISON article, NOT a server tutorial. The reader is deciding which
 LMS to buy or adopt. Your job is to help them DECIDE — confidently and specifically.
 
-AUTHOR VOICE REQUIREMENTS (critical — this determines E-E-A-T score):
-- Write in first person. Use "I've deployed this for...", "When I evaluated X for a client...", "I'd avoid X if..."
-- Reference concrete evaluation experience: specific scenarios, what worked, what frustrated you
+AUTHOR VOICE REQUIREMENTS (critical — honesty is non-negotiable):
+- Write as an editorial team ("we'd pick", "our verdict") or address the reader directly.
+- NEVER invent personal experience: no "I've deployed this for a client", "when I evaluated X",
+  "in my 9 years", no fictional clients, projects, or anecdotes.
+- Ground opinions in VERIFIED FACTS: documented features, published pricing models, patterns in
+  public user reviews ("G2 reviewers frequently mention...").
 - Take clear stances. NAME a winner for each use case. Never end on "it depends" without a recommendation
 - Be specific about WHO each option is best for (team size, budget level, industry, technical skill)
 
@@ -325,7 +330,7 @@ MANDATORY FRONT MATTER (copy exactly, fill in the blanks):
 title: "{title}"
 date: {date}
 image: "images/blog/{slug}.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: {categories}
 tags: {tags}
@@ -336,8 +341,8 @@ STRUCTURE REQUIREMENTS (follow this buyer-guide shape):
 HEADING RULES: Every major section below MUST be an H2 (##). Use H3 (###) only for individual
 product names inside the mini-reviews section. Never start the article's section structure at H3 —
 the document outline must have proper H2 top-level sections. Do NOT skip from H2 to H4.
-1. Opening (no heading): a specific decision pain the reader faces (e.g. "Most 'best LMS' lists are vendor-sponsored fluff. I've actually run these in production, so here's the honest version."). State who this guide is for.
-2. ## How I evaluated these / What matters for {keywords} — your selection criteria
+1. Opening (no heading): a specific decision pain the reader faces (e.g. "Most 'best LMS' lists rank whoever pays the biggest commission. This one weighs documented features, pricing models, and real user reviews against your use case."). State who this guide is for.
+2. ## How we evaluated these / What matters for {keywords} — your selection criteria
 3. ## Comparison table — a MARKDOWN COMPARISON TABLE of 5-7 REAL, well-known LMS products with columns like: Platform | Best for | Deployment (cloud/self-hosted) | Standout strength | Pricing model
 4. ## Product reviews — then one H3 (###) per product, each with a one-line "Best for", 2-3 honest pros, 1-2 real cons, and your verdict
 5. ## Which should you choose? — concrete recommendations BY SCENARIO (small team, tight budget, compliance-heavy industry, etc.)

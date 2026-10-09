@@ -2,7 +2,7 @@
 title: "Installing Open edX with Tutor and Docker: Production Guide"
 date: 2026-06-01T00:09:09+08:00
 image: "images/blog/blog-post-7.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Docker", "Open edX"]

@@ -2,7 +2,7 @@
 title: "Gamified LMS: Best Platforms for Engagement"
 date: 2026-07-04T13:14:20+08:00
 image: "images/blog/blog-post-3.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS"]

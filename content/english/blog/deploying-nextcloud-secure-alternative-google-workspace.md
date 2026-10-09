@@ -2,7 +2,7 @@
 title: "Deploying Nextcloud as a Self-Hosted Google Workspace Alternative for Universities"
 date: "2024-05-14T10:00:00+08:00"
 image: "images/blog/blog-post-5.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Nextcloud", "Ceph", "S3", "Kubernetes", "Data Sovereignty", "Collabora Online"]

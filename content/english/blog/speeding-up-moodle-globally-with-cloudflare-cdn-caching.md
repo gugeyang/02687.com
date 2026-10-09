@@ -2,7 +2,7 @@
 title: "Speeding Up Moodle Globally with Cloudflare CDN Caching"
 date: 2026-06-06T18:20:59+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Moodle"]

@@ -2,7 +2,7 @@
 title: "Running Moodle on Kubernetes: Helm Chart Deployment Guide"
 date: 2026-05-26T22:24:00+08:00
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["Moodle", "Kubernetes", "Helm"]

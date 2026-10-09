@@ -2,7 +2,7 @@
 title: "Best LMS for Retail, Restaurants & Hospitality"
 date: 2026-06-26T14:25:39+08:00
 image: "images/blog/blog-post-7.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["LMS Reviews"]
 tags: ["LMS"]

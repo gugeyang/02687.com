@@ -2,7 +2,7 @@
 title: "Scaling BigBlueButton Video Conferencing for 10,000 Concurrent Students"
 date: "2024-05-06T10:00:00+08:00"
 image: "images/blog/blog-post-4.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Infrastructure and Cloud"]
 tags: ["BigBlueButton", "WebRTC", "Scalelite", "Load Balancing", "UDP"]

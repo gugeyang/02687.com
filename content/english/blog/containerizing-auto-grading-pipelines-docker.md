@@ -2,7 +2,7 @@
 title: "Containerizing Auto-Grading Pipelines with Docker"
 date: "2024-05-10T10:00:00+08:00"
 image: "images/blog/blog-post-1.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Dev Log", "Infrastructure and Cloud"]
 tags: ["Docker", "Auto-Grading", "Python", "Celery", "Kubernetes"]

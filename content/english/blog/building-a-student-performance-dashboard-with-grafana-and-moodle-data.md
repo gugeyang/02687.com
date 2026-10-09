@@ -2,7 +2,7 @@
 title: "Building a Student Performance Dashboard with Grafana and Moodle Data"
 date: 2026-05-23T21:26:47+08:00
 image: "images/blog/blog-post-2.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Data and AI"]
 tags: ["Moodle", "Grafana", "LMS", "Performance"]

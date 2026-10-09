@@ -2,7 +2,7 @@
 title: "Moving from an LMS to a Learning Record Store (LRS) with xAPI"
 date: "2024-05-09T10:00:00+08:00"
 image: "images/blog/blog-post-7.jpg"
-author: "Alex Chen"
+author: "02687 Editorial Team"
 type: "post"
 categories: ["Data and AI"]
 tags: ["xAPI", "LRS", "Data Lake", "AWS Kinesis", "SCORM"]
