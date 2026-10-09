@@ -28,3 +28,6 @@ __pycache__/
 # 关键词调研原始导出（Keyword Planner CSV，本地分析用，不入库）
 Keyword Stats *.csv
 tools/keyword_trends_result.md
+
+# 定时发布日志（本地查看，不入库）
+logs/

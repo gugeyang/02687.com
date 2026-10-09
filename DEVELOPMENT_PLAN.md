@@ -395,6 +395,25 @@ git push
 | 🟢 P3 | Best Corporate Learning & Development Platforms | learning and development platforms, corporate learning platforms | 500-1K / $115-175 | ⬜ 待写 |
 | 🟢 P3 | Best Training Management Software | training management software, employee training tracking software | 100-1K / $114-126 | ⬜ 待写 |
 
+### 6.3 高 CPC 买家意图选题 · 第三批（同一份 Keyword Planner 数据 2026-07-10 再挖）
+
+> 筛选同 6.2（high bid ≥ $30、竞争非 HIGH、排除品牌/导航词）。新簇：课件制作工具、K-12/高校 LMS、SaaS 多租户、课程创作平台、LXP、选型/定制。与已发文章及 6.1/6.2 不重叠（free/cost/healthcare/retail/cloud 已写过，不再出）。
+
+| 优先级 | 建议文章标题 | 核心长尾词 | 月搜索量 / CPC | 状态 |
+|--------|------------|-----------|------------|------|
+| 🔴 P1 | Best eLearning Authoring Tools (2026) | elearning authoring software, elearning authoring, course authoring software, elearning development software | 500-5K / $57-70 | ⬜ 待写 |
+| 🔴 P1 | Best LMS for Schools (K-12) | learning management systems for schools, lms systems for schools, k12 lms, best lms for schools | 50-5K / $43-62 | ⬜ 待写 |
+| 🔴 P1 | Best LMS for Higher Education | lms for higher education, higher ed lms, lms for colleges, university lms | 50-500 / $36-191 | ⬜ 待写 |
+| 🔴 P1 | Best SaaS & Multi-Tenant LMS Platforms | saas lms systems, multi tenant lms, saas lms platforms, saas lms vendors | 50-500 / $76-211 | ⬜ 待写 |
+| 🟡 P2 | Best Online Course Platforms for Creators | best online course platforms, course creation platforms, online course software, online course hosting | 500 / $44-61 | ⬜ 待写 |
+| 🟡 P2 | Learning Experience Platform (LXP) vs LMS: Best LXPs Compared | learning experience platform, lxp vs lms | 500 / $49 | ⬜ 待写 |
+| 🟡 P2 | Top LMS Vendors Compared: How to Build Your Shortlist | lms vendors, learning management system vendors, lms providers | 500 / $149-175 | ⬜ 待写 |
+| 🟡 P2 | Custom LMS Development vs Off-the-Shelf: Build or Buy? | custom lms, custom learning management system | 500 / $155 | ⬜ 待写 |
+| 🟢 P3 | Best LMS with Built-In Authoring Tools | lms authoring tools, lms with authoring tools, lms authoring software | 50 / $88 | ⬜ 待写 |
+| 🟢 P3 | Best Mobile LMS Apps for On-the-Go Training | learning management system app, mobile lms | 50 / $91 | ⬜ 待写 |
+| 🟢 P3 | Best LMS for Government & Public Sector | government lms, public sector learning management system | 50 / $60 | ⬜ 待写 |
+| 🟢 P3 | Best Video Learning Platforms for Training | video learning platforms, video training platform | 50 / $49 | ⬜ 待写 |
+
 **当前已覆盖的核心关键词（禁止重复）：**
 - Docker + Moodle 自建 LMS
 - Neo4j 知识图谱 + 教育
