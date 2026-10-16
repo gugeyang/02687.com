@@ -401,7 +401,7 @@ git push
 
 | 优先级 | 建议文章标题 | 核心长尾词 | 月搜索量 / CPC | 状态 |
 |--------|------------|-----------|------------|------|
-| 🔴 P1 | Best eLearning Authoring Tools (2026) | elearning authoring software, elearning authoring, course authoring software, elearning development software | 500-5K / $57-70 | ⬜ 待写 |
+| 🔴 P1 | Best eLearning Authoring Tools (2026) | elearning authoring software, elearning authoring, course authoring software, elearning development software | 500-5K / $57-70 | ✅ 已发布 |
 | 🔴 P1 | Best LMS for Schools (K-12) | learning management systems for schools, lms systems for schools, k12 lms, best lms for schools | 50-5K / $43-62 | ⬜ 待写 |
 | 🔴 P1 | Best LMS for Higher Education | lms for higher education, higher ed lms, lms for colleges, university lms | 50-500 / $36-191 | ⬜ 待写 |
 | 🔴 P1 | Best SaaS & Multi-Tenant LMS Platforms | saas lms systems, multi tenant lms, saas lms platforms, saas lms vendors | 50-500 / $76-211 | ⬜ 待写 |
