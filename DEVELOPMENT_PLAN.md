@@ -390,7 +390,7 @@ git push
 | 🟡 P2 | Best Safety Training Software | safety training software, online safety training platforms | 100-1K / $153-165 | ✅ 已发布 |
 | 🟡 P2 | Best Customer Onboarding Software | customer onboarding software, customer onboarding platform, customer onboarding tools | 100-1K / $84-118 | ✅ 已发布 |
 | 🟡 P2 | Best LMS for Manufacturing | manufacturing learning management system, manufacturing lms | 100-1K / $141 | ✅ 已发布 |
-| 🟡 P2 | Blended Learning LMS: Best Platforms Compared | blended learning lms, blended learning platform | 100-1K / $194 | ⬜ 待写 |
+| 🟡 P2 | Blended Learning LMS: Best Platforms Compared | blended learning lms, blended learning platform | 100-1K / $194 | ✅ 已发布 |
 | 🟢 P3 | Best Microlearning Platforms (2026) | micro learning platforms, microlearning platform | 100-1K / $92 | ⬜ 待写 |
 | 🟢 P3 | Best Corporate Learning & Development Platforms | learning and development platforms, corporate learning platforms | 500-1K / $115-175 | ⬜ 待写 |
 | 🟢 P3 | Best Training Management Software | training management software, employee training tracking software | 100-1K / $114-126 | ⬜ 待写 |
