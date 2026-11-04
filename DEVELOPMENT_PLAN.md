@@ -406,7 +406,7 @@ git push
 | 🔴 P1 | Best LMS for Higher Education | lms for higher education, higher ed lms, lms for colleges, university lms | 50-500 / $36-191 | ✅ 已发布 |
 | 🔴 P1 | Best SaaS & Multi-Tenant LMS Platforms | saas lms systems, multi tenant lms, saas lms platforms, saas lms vendors | 50-500 / $76-211 | ✅ 已发布 |
 | 🟡 P2 | Best Online Course Platforms for Creators | best online course platforms, course creation platforms, online course software, online course hosting | 500 / $44-61 | ✅ 已发布 |
-| 🟡 P2 | Learning Experience Platform (LXP) vs LMS: Best LXPs Compared | learning experience platform, lxp vs lms | 500 / $49 | ⬜ 待写 |
+| 🟡 P2 | Learning Experience Platform (LXP) vs LMS: Best LXPs Compared | learning experience platform, lxp vs lms | 500 / $49 | ✅ 已发布 |
 | 🟡 P2 | Top LMS Vendors Compared: How to Build Your Shortlist | lms vendors, learning management system vendors, lms providers | 500 / $149-175 | ⬜ 待写 |
 | 🟡 P2 | Custom LMS Development vs Off-the-Shelf: Build or Buy? | custom lms, custom learning management system | 500 / $155 | ⬜ 待写 |
 | 🟢 P3 | Best LMS with Built-In Authoring Tools | lms authoring tools, lms with authoring tools, lms authoring software | 50 / $88 | ⬜ 待写 |
